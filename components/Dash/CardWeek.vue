@@ -10,30 +10,12 @@
 
     <div class="card text-dark mt-4" v-for="week in weeks">
       <div class="card-header">
-        <h3 class="card-title d-flex justify-content-between">
+        <h2 class="card-title d-flex justify-content-start">
           {{ week.name }}
-        </h3>
-        <a href="#" class="btn btn-primary btn-sm">E</a>
-        <a :href="'/dash/week/' + week.id" class="btn btn-info btn-sm">V</a>
-        <a href="#" @click="deleteWeek(week)" class="btn btn-danger btn-sm"
-          >D</a
-        >
+        </h2>
       </div>
       <div class="card-body">
-        <p class="card-text small">Descrição</p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">Iniciante</div>
-              <div class="d-flex align-items-start">
-                <span>Treino A</span>
-                <span class="ms-3">
-                  <a href="#" class="btn btn-success badge">Ver treino</a>
-                </span>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <DashLevels :week="week.id" />
       </div>
     </div>
   </div>
@@ -45,7 +27,7 @@ export default {
     weeks: [],
   }),
   async fetch() {
-    const weekData = await this.$axios.get(`http://127.0.0.1:8000/api/weeks`);
+    const weekData = await this.$axios.get(`weeks`);
     this.weeks = weekData.data;
   },
 };
