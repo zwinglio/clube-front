@@ -8,16 +8,15 @@
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              :data-bs-target="'#sheet' + level"
+              :data-bs-target="'#sheet' + sheet.id"
             >
               {{ sheet.objective }}
             </button>
           </p>
           <div
-            :id="'sheet' + level"
+            :id="'sheet' + sheet.id"
             class="accordion-collapse collapse"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
+            data-bs-parent="#acordionSheets"
           >
             <div class="accordion-body">
               <div class="container">
