@@ -3,7 +3,7 @@
     <div class="col-lg-8">
       <div class="col-lg-3">
         <div class="menu">
-          <a href="/weeks" class="btn btn-secondary fw-bold"><</a>
+          <NuxtLink to="/weeks" class="btn btn-secondary fw-bold"><</NuxtLink>
         </div>
       </div>
     </div>

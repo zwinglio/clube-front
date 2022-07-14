@@ -6,7 +6,7 @@
           <div class="col-lg-6 d-flex justify-content-between">
             <h1>Logo</h1>
             <div>
-              <a href="/dash" class="btn btn-primary">Painel</a>
+              <NuxtLink to="/dash" class="btn btn-primary">Painel</NuxtLink>
               <a href="#" class="btn btn-primary disabled" disabled>Perfil</a>
             </div>
           </div>

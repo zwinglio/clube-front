@@ -10,8 +10,11 @@
 
     <div class="card text-dark mt-4" v-for="week in weeks">
       <div class="card-header">
-        <h2 class="card-title d-flex justify-content-start">
+        <h2 class="card-title d-flex justify-content-between">
           {{ week.name }}
+          <NuxtLink to="/dash/create-level" class="btn btn-success" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="Criar novo nível">
+          <i class="bi bi-plus-lg"></i>
+          </NuxtLink>
         </h2>
       </div>
       <div class="card-body">
@@ -30,5 +33,16 @@ export default {
     const weekData = await this.$axios.get(`weeks`);
     this.weeks = weekData.data;
   },
+  mounted() {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  },
 };
 </script>
+
+<style>
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-success);
+}
+
+</style>
