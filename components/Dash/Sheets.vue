@@ -59,7 +59,7 @@ export default {
     const sheetData = await this.$axios.get(
       `weeks/${this.week}/levels/${this.level}/sheets`
     );
-    this.sheets = sheetData.data;
+    this.sheets = sheetData.data.sheets;
   },
   computed: {
     week: {
