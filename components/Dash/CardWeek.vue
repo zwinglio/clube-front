@@ -12,8 +12,15 @@
       <div class="card-header">
         <h2 class="card-title d-flex justify-content-between">
           {{ week.name }}
-          <NuxtLink to="/dash/create-level" class="btn btn-success" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="Criar novo nível">
-          <i class="bi bi-plus-lg"></i>
+          <NuxtLink
+            :to="{ name: 'dash-create-level', params: { week: week } }"
+            class="btn btn-success"
+            data-bs-placement="top"
+            data-bs-toggle="tooltip"
+            data-bs-custom-class="custom-tooltip"
+            title="Criar novo nível"
+          >
+            <i class="bi bi-plus-lg"></i>
           </NuxtLink>
         </h2>
       </div>
@@ -34,8 +41,12 @@ export default {
     this.weeks = weekData.data;
   },
   mounted() {
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
   },
 };
 </script>
@@ -44,5 +55,4 @@ export default {
 .custom-tooltip {
   --bs-tooltip-bg: var(--bs-success);
 }
-
 </style>
