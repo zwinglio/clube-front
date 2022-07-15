@@ -45,7 +45,7 @@ export default {
   },
   async fetch() {
     const weekData = await this.$axios.get(`weeks`);
-    this.weeks = weekData.data;
+    this.weeks = await weekData.data;
   },
   mounted() {
     const tooltipTriggerList = document.querySelectorAll(
