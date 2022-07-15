@@ -37,7 +37,7 @@ export default {
     async storeWeek() {
       const res = await this.$axios.post("weeks", this.week);
       //router back
-      this.$router.push("/dash");
+      this.$router.push("/dashboard");
     },
   },
 };
