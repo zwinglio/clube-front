@@ -23,8 +23,8 @@
                 placeholder="Password"
               />
             </div>
-            <a href="/weeks" type="submit" class="btn btn-success mt-4"
-              >Entrar</a
+            <NuxtLink to="/weeks" type="submit" class="btn btn-success mt-4"
+              >Entrar</NuxtLink
             >
           </form>
         </div>

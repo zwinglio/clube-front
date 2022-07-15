@@ -19,4 +19,8 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.btn .btn-success {
+  background-color: #00df7b !important;
+}
+</style>

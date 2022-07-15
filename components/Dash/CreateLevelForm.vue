@@ -50,7 +50,7 @@ export default {
         `weeks/${this.week.id}/levels`,
         this.level
       );
-      this.$router.push("/dash");
+      this.$router.push("/dashboard");
     },
   },
   mounted() {

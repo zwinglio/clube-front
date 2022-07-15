@@ -3,13 +3,13 @@
     <div class="container mt-4">
       <div class="row">
         <div class="col-lg-6">
-          <NuxtLink to="/dash" class="btn btn-secondary">Voltar</NuxtLink>
+          <NuxtLink to="/dashboard" class="btn btn-secondary">Voltar</NuxtLink>
 
-          <h1 class="mt-4">Criar um novo nível</h1>
+          <h1 class="mt-4">Criar um novo treino</h1>
           <div class="alert alert-info">
-            {{ week.name }}
+            {{ level.name }}
           </div>
-          <DashCreateLevelForm :week="week" />
+          <DashCreateSheetForm :level="level" />
         </div>
       </div>
     </div>
@@ -23,8 +23,10 @@ export default {
       week: {},
     };
   },
-  mounted() {
-    this.week = this.$route.params.week;
+  computed: {
+    level() {
+      return this.$route.params.level;
+    },
   },
 };
 </script>

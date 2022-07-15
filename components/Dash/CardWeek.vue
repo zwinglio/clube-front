@@ -9,23 +9,28 @@
     </div>
 
     <div class="card text-dark mt-4" v-for="week in weeks">
-      <div class="card-header">
-        <h2 class="card-title d-flex justify-content-between">
+      <div class="card-header d-flex justify-content-between">
+        <h2 class="card-title">
           {{ week.name }}
+        </h2>
+        <div class="actions btn-group">
           <NuxtLink
-            :to="{ name: 'dash-create-level', params: { week: week } }"
-            class="btn btn-success"
+            :to="{ name: 'dashboard-create-level', params: { week: week } }"
+            class="btn btn-outline-success"
             data-bs-placement="top"
             data-bs-toggle="tooltip"
             data-bs-custom-class="custom-tooltip"
             title="Criar novo nível"
           >
-            <i class="bi bi-plus-lg"></i>
+            <i class="bi bi-plus-circle"></i> Nível
           </NuxtLink>
-        </h2>
+          <button @click="deleteWeek(week.id)" class="btn btn-outline-danger">
+            <i class="bi bi-x-circle"></i> Semana
+          </button>
+        </div>
       </div>
       <div class="card-body">
-        <DashLevels :week="week.id" />
+        <DashLevels :week_id="week.id" />
       </div>
     </div>
   </div>
@@ -33,9 +38,11 @@
 
 <script>
 export default {
-  data: () => ({
-    weeks: [],
-  }),
+  data() {
+    return {
+      weeks: [],
+    };
+  },
   async fetch() {
     const weekData = await this.$axios.get(`weeks`);
     this.weeks = weekData.data;
@@ -47,6 +54,16 @@ export default {
     const tooltipList = [...tooltipTriggerList].map(
       (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
     );
+  },
+  methods: {
+    async deleteWeek(value) {
+      if (prompt('Para deletar a semana, digite "DELETE"') == "DELETE") {
+        await this.$axios.delete(`weeks/${value}`).catch((error) => {
+          alert("Não foi possível deletar a semana");
+        });
+        await this.$fetch();
+      }
+    },
   },
 };
 </script>
