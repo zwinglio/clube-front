@@ -54,6 +54,8 @@ export default {
     const tooltipList = [...tooltipTriggerList].map(
       (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
     );
+
+    this.$fetch();
   },
   methods: {
     async deleteWeek(value) {
