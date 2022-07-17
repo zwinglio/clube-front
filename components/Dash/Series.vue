@@ -8,30 +8,44 @@
     </div>
     <div v-else class="serie">
       <div v-for="serie in series" class="row">
-        <div class="col-12 border-bottom d-flex justify-content-between">
+        <div
+          class="col-12 border-bottom d-flex justify-content-between align-items-center"
+        >
           <div>
             <h3 class="m-0 p-0">{{ serie.name }}</h3>
             <p class="small m-0 p-0">
               {{ serie.repetitions }} // {{ serie.description }}
             </p>
           </div>
-          <div>
+          <div class="btn-group align-middle">
+            <button
+              class="btn btn-outline-danger"
+              @click="deleteSerie(serie.id)"
+              title="Remover série de exercício"
+            >
+              <i class="bi bi-trash"></i>
+            </button>
             <NuxtLink
-              class="btn btn-success w-100"
+              class="btn btn-outline-success"
               :to="{
                 name: 'dashboard-create-exercise',
                 params: { serie: serie.id },
               }"
               title="Adicionar exercício"
             >
-              +
+              <i class="bi bi-plus-circle"></i>
             </NuxtLink>
           </div>
         </div>
+        <DashExercises
+          class="mb-4"
+          :week_id="week_id"
+          :level_id="level_id"
+          :sheet_id="sheet_id"
+          :serie_id="serie.id"
+        />
       </div>
     </div>
-
-    <!-- <DashExercises /> -->
   </div>
 </template>
 
@@ -42,8 +56,8 @@ export default {
       type: Number,
       required: true,
     },
-    level: {
-      type: Object,
+    level_id: {
+      type: Number,
       required: true,
     },
     sheet_id: {
@@ -54,7 +68,7 @@ export default {
   async fetch() {
     const seriesData = await this.$axios
       .get(
-        `weeks/${this.week_id}/levels/${this.level.id}/sheets/${this.sheet_id}/series`
+        `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series`
       )
       .then((res) => {
         return res.data.series;

@@ -22,7 +22,7 @@
               <div class="container">
                 <DashSeries
                   :week_id="week_id"
-                  :level="level"
+                  :level_id="level.id"
                   :sheet_id="sheet.id"
                 />
                 <div class="row">
