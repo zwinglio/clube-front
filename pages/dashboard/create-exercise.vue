@@ -4,11 +4,16 @@
       <div class="row">
         <div class="col-lg-6">
           <NuxtLink to="/dashboard" class="btn btn-secondary">Voltar</NuxtLink>
-          <h1 class="mt-4">Criar um novo nível</h1>
-          <div class="alert alert-info">
-            {{ week.name }}
+          <h1 class="mt-4">Criar um novo exercício</h1>
+          <div class="alert alert-info py-1">
+            {{ serie.name }}
           </div>
-          <DashCreateExerciseForm :week="week" />
+          <DashCreateExerciseForm
+            :serie="serie"
+            :week_id="week_id"
+            :level_id="level_id"
+            :sheet_id="sheet_id"
+          />
         </div>
       </div>
     </div>
@@ -19,11 +24,14 @@
 export default {
   data() {
     return {
-      week: {},
+      serie: "",
+      week_id: this.$route.params.week_id,
+      level_id: this.$route.params.level_id,
+      sheet_id: this.$route.params.sheet_id,
     };
   },
   mounted() {
-    this.week = this.$route.params.week;
+    this.serie = this.$route.params.serie;
   },
 };
 </script>

@@ -29,7 +29,12 @@
               class="btn btn-outline-success"
               :to="{
                 name: 'dashboard-create-exercise',
-                params: { serie: serie.id },
+                params: {
+                  week_id: week_id,
+                  level_id: level_id,
+                  sheet_id: sheet_id,
+                  serie: serie,
+                },
               }"
               title="Adicionar exercício"
             >

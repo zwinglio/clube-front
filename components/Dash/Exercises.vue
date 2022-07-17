@@ -58,8 +58,7 @@ export default {
   },
   methods: {
     deleteExercise(id) {
-      prompt("Digite 'DELETE' para confirmar a exclusão");
-      if (prompt() === "DELETE") {
+      if (prompt("Digite 'DELETE' para confirmar a exclusão") === "DELETE") {
         this.$axios
           .delete(
             `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${this.serie_id}/exercises/${id}`
