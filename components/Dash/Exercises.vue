@@ -1,7 +1,15 @@
 <template>
   <div class="exercises">
     <div v-for="exercise in exercises" class="row rounded-3 mt-2">
-      <div class="col-4">Imagem</div>
+      <div class="col-4">
+        <img
+          src="https://img.youtube.com/vi/syyeLkbTs04/hqdefault.jpg"
+          type="button"
+          data-bs-toggle="modal"
+          class="w-100"
+          :data-bs-target="'#videoExercise' + exercise.id"
+        />
+      </div>
       <div class="col-8">
         <h3 class="my-0 py-0">{{ exercise.name }}</h3>
         <p class="small my-0 py-0">{{ exercise.repetitions }}</p>
@@ -13,6 +21,11 @@
           Excluir
         </button>
       </div>
+      <DashVideoModal
+        :video_url="exercise.video_url"
+        :exercise_id="exercise.id"
+        :exercise_name="exercise.name"
+      />
     </div>
   </div>
 </template>
