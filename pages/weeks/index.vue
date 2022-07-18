@@ -6,8 +6,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <p>Bem vindo, Fluano de Tal</p>
+            <hr />
             <h1 class="text-center">Em qual semana você está?</h1>
-
             <div v-for="week in weeks" :key="week">
               <a
                 href="#"

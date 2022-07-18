@@ -3,7 +3,7 @@
     <div class="container mt-4">
       <div class="row justify-content-center">
         <div class="col-lg-6 d-flex justify-content-between">
-          <h1>Logo</h1>
+          <nuxt-img src="/img/logo.png" alt="" width="80" format="webp" />
           <div>
             <NuxtLink to="/dashboard" class="btn btn-primary">
               Painel
