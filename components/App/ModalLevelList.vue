@@ -6,9 +6,9 @@
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content modal-level-list">
+      <div class="modal-content modal-level-list modal-dark">
         <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">
+          <h3 class="modal-title">
             {{ week.name }}
           </h3>
           <button
@@ -18,9 +18,27 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">Lista de Níveis! <--</div>
+        <div class="modal-body">
+          <div
+            v-if="!$fetchState.pending && levels.length == 0"
+            class="alert alert-success"
+          >
+            Nenhum nível encontrado
+          </div>
+          <div v-else>
+            <div class="levels" v-for="level in levels">
+              <a href="#" class="btn btn-primary btn-lg w-100 mt-3">{{
+                level.name
+              }}</a>
+            </div>
+          </div>
+        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-outline-success"
+            data-bs-dismiss="modal"
+          >
             Fechar
           </button>
         </div>
@@ -36,6 +54,19 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  async fetch() {
+    const levelsData = await this.$axios
+      .get(`weeks/${this.week.id}/levels`)
+      .then((res) => {
+        return res.data.levels;
+      });
+    this.levels = levelsData;
+  },
+  data() {
+    return {
+      levels: [],
+    };
   },
 };
 </script>

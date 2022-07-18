@@ -13,7 +13,7 @@
                 href="#"
                 data-bs-toggle="modal"
                 :data-bs-target="'#weekLevelList' + week.id"
-                class="btn btn-success btn-lg py-3 w-100 mt-3 fw-bold text-light"
+                class="btn btn-primary btn-lg py-3 w-100 mt-3 fw-bold"
               >
                 {{ week.name }}
               </a>

@@ -23,7 +23,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/node_modules/bootstrap/dist/css/bootstrap.min.css',
+    // '~/node_modules/bootstrap/dist/css/bootstrap.min.css',
+    '~/assets/scss/main.scss',
     '~/node_modules/bootstrap-icons/font/bootstrap-icons.css',
   ],
 
