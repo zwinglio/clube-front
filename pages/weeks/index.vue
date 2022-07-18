@@ -9,9 +9,15 @@
             <h1 class="text-center">Em qual semana você está?</h1>
 
             <div v-for="week in weeks" :key="week">
-              <a href="#" class="btn btn-success btn-lg py-2 w-100 mt-3">{{
-                week.name
-              }}</a>
+              <a
+                href="#"
+                data-bs-toggle="modal"
+                :data-bs-target="'#weekLevelList' + week.id"
+                class="btn btn-success btn-lg py-3 w-100 mt-3 fw-bold text-light"
+              >
+                {{ week.name }}
+              </a>
+              <AppModalLevelList :week="week" />
             </div>
           </div>
         </div>
@@ -26,21 +32,13 @@ export default {
   layout: "DefaultLayout",
   data() {
     return {
-      weeks: [
-        {
-          name: "Semana 01",
-          id: 1,
-        },
-        {
-          name: "Semana 02",
-          id: 2,
-        },
-        {
-          name: "Semana 03",
-          id: 3,
-        },
-      ],
+      weeks: [],
     };
+  },
+  async fetch() {
+    const weeksData = await this.$axios.$get("/weeks");
+    console.log(weeksData);
+    this.weeks = weeksData;
   },
 };
 </script>
