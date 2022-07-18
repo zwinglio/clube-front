@@ -9,10 +9,5 @@
 export default {
   name: "LoginPage",
   layout: "DefaultLayout",
-  middleware: [
-    function ({ redirect }) {
-      redirect("/app");
-    },
-  ],
 };
 </script>
