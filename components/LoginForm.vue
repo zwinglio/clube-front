@@ -3,7 +3,7 @@
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <h2>Entre para começar!</h2>
+          <h2>💪 Entre para começar!</h2>
           <form class="mt-4">
             <div class="form-group mt-3">
               <label for="email">E-mail</label>

@@ -8,9 +8,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content modal-level-list modal-dark">
         <div class="modal-header">
-          <h3 class="modal-title">
-            {{ week.name }}
-          </h3>
+          <h3 class="modal-title">🗓️ {{ week.name }}</h3>
           <button
             type="button"
             class="btn-close"
@@ -19,17 +17,19 @@
           ></button>
         </div>
         <div class="modal-body">
-          <div
-            v-if="!$fetchState.pending && levels.length == 0"
-            class="alert alert-success"
-          >
+          <div v-if="levels.length == 0" class="alert alert-success">
             Nenhum nível encontrado
           </div>
           <div v-else>
+            <p>ℹ️ Selecione seu nível</p>
             <div class="levels" v-for="level in levels">
-              <a href="#" class="btn btn-primary btn-lg w-100 mt-3">{{
-                level.name
-              }}</a>
+              <a
+                :href="'#modalListaTreino' + level.id"
+                data-bs-toggle="modal"
+                class="btn btn-primary btn-lg w-100 mt-3"
+              >
+                {{ level.name }}
+              </a>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
             class="btn btn-outline-success"
             data-bs-dismiss="modal"
           >
-            Fechar
+            Voltar
           </button>
         </div>
       </div>
@@ -55,17 +55,9 @@ export default {
       required: true,
     },
   },
-  async fetch() {
-    const levelsData = await this.$axios
-      .get(`weeks/${this.week.id}/levels`)
-      .then((res) => {
-        return res.data.levels;
-      });
-    this.levels = levelsData;
-  },
   data() {
     return {
-      levels: [],
+      levels: this.week.levels,
     };
   },
 };
