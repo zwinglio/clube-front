@@ -23,8 +23,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '~/node_modules/bootstrap/dist/css/bootstrap.min.css',
-    '~/assets/scss/main.scss',
+    '@/assets/css/main.scss',
     '~/node_modules/bootstrap-icons/font/bootstrap-icons.css',
   ],
 
@@ -47,6 +46,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxt/image',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -59,7 +59,14 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
+      name: 'Clube da Musculação',
+      description: 'Aplicativo de treino para você que pratica exercícios na academia ou no seu condomínio.',
       lang: 'pt-BR',
+      background_color: '#0F181E',
+      start_url: '/weeks',
+    },
+    icon: {
+      source: '~/static/img/logo.png',
     }
   },
 
@@ -75,5 +82,4 @@ export default {
     download: true,
     overwrite: true,
   },
-
 }
