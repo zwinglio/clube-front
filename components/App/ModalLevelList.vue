@@ -21,7 +21,7 @@
             Nenhum nível encontrado
           </div>
           <div v-else>
-            <p>ℹ️ Selecione seu nível</p>
+            <p class="alert alert-success">ℹ️ Selecione seu nível</p>
             <div class="levels" v-for="level in levels">
               <a
                 :href="'#modalListaTreino' + level.id"

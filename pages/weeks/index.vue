@@ -19,31 +19,7 @@
               </a>
               <AppModalLevelList :week="week" />
               <div v-for="level in week.levels">
-                <!-- Início do Modal de Treinos -->
-                <div class="modal fade" :id="'modalListaTreino' + level.id">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h3 class="modal-title text-dark">{{ level.name }}</h3>
-                      </div>
-                      <div class="modal-body">
-                        <ul>
-                          <li></li>
-                        </ul>
-                      </div>
-                      <div class="modal-footer">
-                        <a
-                          :href="'#weekLevelList' + week.id"
-                          data-bs-toggle="modal"
-                          class="btn btn-outline-success"
-                        >
-                          Voltar
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Fim do Modal de Treinos -->
+                <AppModalSheetList :week="week" :level="level" />
               </div>
             </div>
             <!-- Fim do V-FOR -->

@@ -75,9 +75,10 @@ export default {
   },
 
   googleFonts: {
+    prefetch: true,
     families: {
       'League+Gothic': [400],
-      Poppins: [400, 700]
+      Inter: [200, 400, 700],
     },
     download: true,
     overwrite: true,
