@@ -41,7 +41,6 @@ export default {
   },
   async fetch() {
     const weeksData = await this.$axios.$get("/weeks");
-    console.log(weeksData);
     this.weeks = weeksData;
   },
 };
