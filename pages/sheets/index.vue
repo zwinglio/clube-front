@@ -4,92 +4,60 @@
       <!-- Header do treino -->
       <div class="row justify-content-center py-4">
         <div class="col-lg-6">
-          <NuxtLink to="/weeks" class="btn btn-sm btn-outline-secondary"
-            >Voltar</NuxtLink
-          >
+          <NuxtLink to="/weeks" class="btn btn-sm btn-outline-secondary">
+            Voltar
+          </NuxtLink>
           <a class="btn btn-sm btn-outline-primary">Salvar</a>
         </div>
       </div>
 
       <!-- Treino -->
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <p>Semana 01 - Intermediário</p>
-          <h1 class="mb-4">Emagrecimento | Treino A</h1>
-          <p class="rounded-2 bg-light text-dark p-3">
-            <strong>Instruções:</strong>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque euismod, nisi vel consectetur euismod.
-          </p>
-          <hr />
-          <div class="d-flex align-items-center">
-            <h2 class="p-0 m-0">Série 01</h2>
-            <div id="series-info" class="ms-4">
-              <p class="small p-0 m-0">Instruções vem aqui</p>
-              <p class="small p-0 m-0">Repetir 3x</p>
-            </div>
-          </div>
-          <hr />
-
-          <div class="treino d-flex align-items-center mt-4">
-            <!-- Thumb do vídeo de exercício -->
-            <div class="video-treino">
-              <a href="#modalExercicio" data-bs-toggle="modal">
-                <img
-                  src="https://img.youtube.com/vi/cAio13Q2e5s/1.jpg"
-                  alt="Treino"
-                />
-                <div class="container__overlay">
-                  <i class="bi bi-play text-primary"></i>
-                </div>
-              </a>
-            </div>
-
-            <!-- Informação do exercício -->
-            <div class="treino-info ms-4">
-              <h3 class="p-0 m-0">Supino Máquina</h3>
-              <p class="p-0 m-0 fw-bold">15 vezes</p>
-              <p class="small p-0 m-0">Fazer com halteres do lado da máquina</p>
-            </div>
-          </div>
-          <!-- Modal do vídeo do exercício com Vídeo -->
-          <div class="modal fade" id="modalExercicio" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content bg-dark">
-                <div class="embed-responsive embed-responsive-16by9 rounded-3">
-                  <div class="alert alert-info">
-                    Dica: pause o vídeo antes de voltar
-                  </div>
-                  <iframe
-                    class="embed-responsive-item rounded-3 w-100"
-                    style="height: 250px"
-                    src="https://www.youtube.com/embed/cAio13Q2e5s?autoplay=0&controls=0&showinfo=0&rel=0"
-                    width="450"
-                    height="250"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <button
-                  type="button"
-                  class="btn btn-outline-primary rounded-3 mt-3 fw-bold"
-                  data-bs-dismiss="modal"
-                >
-                  Voltar
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Fim do Thumb do vídeo de exercício -->
-        </div>
-      </div>
+      <AppSheetInfo :sheet="sheet">
+        <AppSheetSerie v-for="serie in sheet.series" :serie="serie" />
+      </AppSheetInfo>
     </div>
   </section>
 </template>
 
 <script>
 export default {
+  async fetch() {
+    const sheetData = await this.$axios.$get(
+      `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}`
+    );
+    this.sheet = sheetData.sheet;
+  },
   data() {
     return {
+      sheet: {
+        objective: "Objetivo",
+        description: "Descrição",
+        level: {
+          name: "Nome do nível",
+          week: {
+            name: "Semana",
+          },
+        },
+        series: [
+          {
+            name: "Série 01",
+            repetitions: "15 repetições",
+            description: "Instruções da série",
+            exercises: [
+              {
+                name: "Exercício 01",
+                description: "Descrição do exercício",
+                video_url: "dQw4w9WgXcQ",
+                repetitions: "15 repetições",
+              },
+              {
+                name: "Exercício 02",
+                description: "Descrição do exercício",
+              },
+            ],
+          },
+        ],
+      },
       week_id: this.$route.params.week_id,
       level_id: this.$route.params.level_id,
       sheet_id: this.$route.params.sheet_id,
