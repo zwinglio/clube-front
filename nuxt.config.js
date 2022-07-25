@@ -17,6 +17,9 @@ export default {
     script: [
       {
         src: '/js/bootstrap.bundle.min.js',
+      },
+      {
+        // src: '@/node_modules/plyr/dist/plyr.min.js',
       }
     ]
   },
@@ -25,6 +28,7 @@ export default {
   css: [
     '@/assets/css/main.scss',
     '~/node_modules/bootstrap-icons/font/bootstrap-icons.css',
+    // '~/node_modules/plyr/dist/plyr.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
