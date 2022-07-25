@@ -21,9 +21,14 @@
             <a href="#" class="btn btn-secondary w-75 py-3 fw-bold">
               {{ sheet.objective }}
             </a>
-            <a href="#" class="btn btn-primary w-25">
+            <button
+              type="button"
+              class="btn btn-primary w-25"
+              data-bs-dismiss="modal"
+              @click="closeModalandRedirect($event, sheet.id)"
+            >
               <i class="bi bi-play-fill fs-3 text-dark"></i>
-            </a>
+            </button>
           </div>
         </div>
         <div class="modal-footer">
@@ -59,6 +64,19 @@ export default {
       return this.week.sheets.filter(
         (sheet) => sheet.level_id == this.level.id
       );
+    },
+  },
+  methods: {
+    closeModalandRedirect(event, sheet_id) {
+      console.log("closeModalandRedirect");
+      this.$router.push({
+        name: "sheets",
+        params: {
+          week_id: this.week.id,
+          level_id: this.level.id,
+          sheet_id: sheet_id,
+        },
+      });
     },
   },
 };
