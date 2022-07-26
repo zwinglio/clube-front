@@ -30,6 +30,16 @@
       />
     </div>
     <div class="form-group mt-3">
+      <label for="exercise-repetitions">ID do Vídeo no Youtube</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exercise-repetitions"
+        placeholder="Ex.: 1JVnp3qwWAs"
+        v-model="exercise.video_url"
+      />
+    </div>
+    <div class="form-group mt-3">
       <label for="exercise-order">Order</label>
       <input
         type="number"
@@ -37,6 +47,7 @@
         id="exercise-order"
         placeholder="Ex.: 01"
         v-model="exercise.order"
+        required
       />
     </div>
     <div class="form-group mt-3 d-none">
@@ -78,6 +89,7 @@ export default {
         name: "",
         description: "",
         repetitions: "",
+        video_url: "",
         serie_id: this.$route.params.serie.id,
         order: "",
       },

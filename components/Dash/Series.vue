@@ -88,6 +88,20 @@ export default {
       series: [],
     };
   },
+  methods: {
+    async deleteSerie(serie_id) {
+      if (prompt('Para deletar a série, digite "DELETE"') == "DELETE") {
+        await this.$axios
+          .delete(
+            `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${serie_id}`
+          )
+          .catch((error) => {
+            alert("Não foi possível deletar a série!");
+          });
+        await this.$fetch();
+      }
+    },
+  },
 };
 </script>
 
