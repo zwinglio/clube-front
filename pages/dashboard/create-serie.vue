@@ -1,12 +1,12 @@
 <template>
   <section id="create-serie">
     <div class="container mt-4">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-lg-6">
           <NuxtLink to="/dashboard" class="btn btn-secondary">Voltar</NuxtLink>
           <h1 class="mt-4">Criar uma nova série</h1>
           <div class="alert alert-info">
-            {{ sheet.objective }}
+            Você está criando uma série em:<br />{{ sheet.objective }}
           </div>
           <DashCreateSerieForm
             :sheet="sheet"
