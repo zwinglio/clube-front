@@ -5,7 +5,7 @@
       <div class="container mt-4">
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <p>Bem vindo, Fluano de Tal</p>
+            <p>Bom dia, {{ user.name }} 👊</p>
             <hr />
             <h1 class="text-center">Em qual semana você está?</h1>
             <div v-for="week in weeks" :key="week">
@@ -32,8 +32,8 @@
 
 <script>
 export default {
-  name: "WeeksPage",
   layout: "DefaultLayout",
+  middleware: ["auth"],
   data() {
     return {
       weeks: [],
@@ -42,6 +42,11 @@ export default {
   async fetch() {
     const weeksData = await this.$axios.$get("/weeks");
     this.weeks = weeksData;
+  },
+  computed: {
+    user() {
+      return this.$auth.user;
+    },
   },
 };
 </script>
