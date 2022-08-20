@@ -62,7 +62,7 @@ export default {
       required: true,
     },
     level_id: {
-      type: Object,
+      type: Number,
       required: true,
     },
     week_id: {
