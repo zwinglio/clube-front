@@ -5,12 +5,14 @@
         <div class="col-lg-6">
           <h2>💪 Entre para começar!</h2>
           <!--erro handle-->
-          <div
-            class="alert alert-danger mt-3"
-            v-if="errors && errors.length > 0"
-          >
-            {{ errors }} 😢
-          </div>
+          <transition name="fade">
+            <div
+              class="alert alert-danger mt-3"
+              v-if="errors && errors.length > 0"
+            >
+              {{ errors }} 😢
+            </div>
+          </transition>
           <form class="mt-4" autoComplete="off" @submit.prevent="submitForm">
             <div class="form-group mt-3">
               <label for="email">E-mail</label>
@@ -82,5 +84,20 @@ export default {
         });
     },
   },
+  transition: {
+    name: "fade",
+    mode: "out-in",
+  },
 };
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+</style>
