@@ -19,9 +19,4 @@ h2,
 h3 {
   text-transform: uppercase;
 }
-
-.btn-success {
-  background-color: #00df7b !important;
-  color: #0f181e !important;
-}
 </style>
