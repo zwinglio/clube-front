@@ -18,9 +18,9 @@
             </ul>
             <hr class="mt-5" />
             <p class="small">Tem uma chave de teste?</p>
-            <NuxtLink to="app" class="btn btn-primary btn-sm"
-              >Faça o login!</NuxtLink
-            >
+            <NuxtLink to="login" class="btn btn-primary btn-sm">
+              Faça o login!
+            </NuxtLink>
           </div>
         </div>
       </div>

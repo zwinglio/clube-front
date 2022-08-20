@@ -1,15 +1,12 @@
 <template>
-  <LoginForm />
+  <div>
+    <JustLogo />
+    <LoginForm />
+  </div>
 </template>
 
 <script>
 export default {
-  middleware: "auth",
-  auth: "guest",
-  head() {
-    return {
-      title: "Sign In — ergodnc",
-    };
-  },
+  layout: "DefaultLayout",
 };
 </script>

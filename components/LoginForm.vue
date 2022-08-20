@@ -1,9 +1,16 @@
 <template>
   <section id="login">
-    <div class="container mt-5">
+    <div class="container mt-3">
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <h2>💪 Entre para começar!</h2>
+          <!--erro handle-->
+          <div
+            class="alert alert-danger mt-3"
+            v-if="errors && errors.length > 0"
+          >
+            {{ errors }} 😢
+          </div>
           <form class="mt-4" autoComplete="off" @submit.prevent="submitForm">
             <div class="form-group mt-3">
               <label for="email">E-mail</label>
@@ -13,6 +20,8 @@
                 id="email"
                 v-model="email"
                 placeholder="Enter email"
+                v-bind:class="{ 'is-invalid': errors.length > 0 }"
+                required
               />
             </div>
             <div class="form-group mt-3">
@@ -23,6 +32,8 @@
                 id="password"
                 v-model="password"
                 placeholder="Password"
+                required
+                v-bind:class="{ 'is-invalid': errors.length > 0 }"
               />
             </div>
             <div class="w-100 text-center">
@@ -44,11 +55,12 @@ export default {
     return {
       email: "",
       password: "",
+      errors: [],
     };
   },
   methods: {
     submitForm(event) {
-      this.erros = [];
+      this.errors = [];
       this.$auth
         .loginWith("laravelJWT", {
           data: {
@@ -58,8 +70,9 @@ export default {
         })
         .then(() => this.$router.push("/teste"))
         .catch((error) => {
-          if (error.response.status === 422) throw error;
-          this.erros = Object.values(error.response.data.erros).flat();
+          if (error.response.status === 401) {
+            this.errors = "E-mail ou senha inválidos";
+          }
         });
     },
   },

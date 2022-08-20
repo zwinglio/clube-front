@@ -3,7 +3,9 @@
     <div class="container mt-4">
       <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
-          <nuxt-img src="/img/logo.png" alt="" width="150" format="webp" />
+          <NuxtLink to="/">
+            <nuxt-img src="/img/logo.png" alt="" width="150" format="webp" />
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -11,8 +13,5 @@
 </template>
 
 <script>
-export default {
-  name: "JustLogo",
-  setup() {},
-};
+export default {};
 </script>
