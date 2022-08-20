@@ -68,7 +68,7 @@ export default {
             password: this.password,
           },
         })
-        .then(() => this.$router.push("/teste"))
+        .then(() => this.$router.push("/weeks"))
         .catch((error) => {
           if (error.response.status === 401) {
             this.errors = "E-mail ou senha inválidos";

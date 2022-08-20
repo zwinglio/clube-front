@@ -32,8 +32,8 @@
 
 <script>
 export default {
-  name: "WeeksPage",
   layout: "DefaultLayout",
+  middleware: ["auth"],
   data() {
     return {
       weeks: [],

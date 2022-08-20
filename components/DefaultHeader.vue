@@ -9,6 +9,7 @@
               Painel
             </NuxtLink>
             <a href="#" class="btn btn-primary disabled" disabled>Perfil</a>
+            <button @click="logout" class="btn btn-primary">Logout</button>
           </div>
         </div>
       </div>
@@ -17,7 +18,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    logout() {
+      this.$auth.logout();
+    },
+  },
+};
 </script>
 
 <style></style>
