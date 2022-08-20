@@ -52,7 +52,7 @@ export default {
     strategies: {
       'laravelJWT': {
         provider: 'laravel/jwt',
-        url: 'http://localhost:8000/api/',
+        url: 'https://clube-api.voceemforma.net/api/',
         endpoints: {
           login: {
             url: 'auth/login',
@@ -69,10 +69,10 @@ export default {
         // },
         token: {
           property: 'access_token',
-          maxAge: 60 * 60
+          maxAge: 60
         },
         refreshToken: {
-          maxAge: 20160 * 60
+          maxAge: 20160
         }
       }
     }
@@ -81,8 +81,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    // baseURL: "https://clube-api.voceemforma.net/api",
-    baseURL: 'http://127.0.0.1:8000/api/',
+    baseURL: "https://clube-api.voceemforma.net/api/",
+    // baseURL: 'http://127.0.0.1:8000/api/',
     credentials: true,
   },
 
