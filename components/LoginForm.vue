@@ -37,8 +37,11 @@
               />
             </div>
             <div class="w-100 text-center">
-              <button type="submit" class="btn btn-primary w-75 mt-4">
-                Entrar
+              <button type="submit" class="btn btn-primary w-100 mt-4">
+                <div class="spinner-border" role="status" v-if="loading">
+                  <span class="visually-hidden">Validando informações...</span>
+                </div>
+                <span v-else class="fw-bold">Entrar</span>
               </button>
             </div>
           </form>
@@ -56,10 +59,12 @@ export default {
       email: "",
       password: "",
       errors: [],
+      loading: false,
     };
   },
   methods: {
     submitForm(event) {
+      this.loading = true;
       this.errors = [];
       this.$auth
         .loginWith("laravelJWT", {
@@ -72,6 +77,7 @@ export default {
         .catch((error) => {
           if (error.response.status === 401) {
             this.errors = "E-mail ou senha inválidos";
+            this.loading = false;
           }
         });
     },
