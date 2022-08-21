@@ -36,53 +36,46 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/google-fonts", "@nuxt/image"],
+  buildModules: ["@nuxtjs/google-fonts", "@nuxt/image", '@nuxtjs/pwa'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-    // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa",
-    "@nuxt/image",
-    "@nuxtjs/auth-next",
-  ],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image", "@nuxtjs/auth-next"],
 
   auth: {
     strategies: {
-      'laravelJWT': {
-        provider: 'laravel/jwt',
-        url: 'https://clube-api.voceemforma.net/api/',
+      laravelJWT: {
+        provider: "laravel/jwt",
+        url: "https://clube-api.voceemforma.net/api/",
         endpoints: {
           login: {
-            url: 'auth/login',
+            url: "auth/login",
           },
           logout: {
-            url: 'auth/logout',
+            url: "auth/logout",
           },
           user: {
-            url: 'user',
-          }
+            url: "user",
+          },
+          refresh: {
+            url: "auth/refresh",
+          },
         },
-        // user: {
-        //   property: 'data',
-        // },
         token: {
-          property: 'access_token',
-          maxAge: 60
+          property: "access_token",
+          maxAge: 3600,
         },
         refreshToken: {
-          maxAge: 20160
-        }
-      }
-    }
+          maxAge: 3600,
+        },
+      },
+    },
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: "https://clube-api.voceemforma.net/api/",
-    // baseURL: 'http://127.0.0.1:8000/api/',
+    // baseURL: "http://127.0.0.1:8000/api/",
     credentials: true,
   },
 
@@ -97,7 +90,8 @@ export default {
       start_url: "/weeks",
     },
     icon: {
-      source: "~/static/img/logo.png",
+      source: "/icon.png",
+      purpose: "any",
     },
   },
 
@@ -108,9 +102,10 @@ export default {
     prefetch: true,
     families: {
       "League+Gothic": [400],
-      Inter: [200, 400, 700],
+      "Inter": [200, 400, 700],
     },
     download: true,
     overwrite: true,
+    useStylesheet: true,
   },
 };

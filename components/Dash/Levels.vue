@@ -1,13 +1,10 @@
 <template>
   <div class="levels">
-    <div
-      v-if="!$fetchState.pending && levels.length == []"
-      class="alert alert-warning"
-    >
+    <div v-if="levels.length == []" class="alert alert-warning">
       Nenhum nível cadastrado!
     </div>
 
-    <div v-for="level in levels" :key="level.id" class="level">
+    <div v-else v-for="level in levels" :key="level.id" class="level">
       <div class="d-flex justify-content-start">
         <p>
           <strong>Nível:</strong> {{ level.name }}
@@ -31,35 +28,30 @@
 <script>
 export default {
   props: {
-    week_id: {
-      type: Number,
+    levels: {
+      type: Array,
       required: true,
     },
   },
-  data() {
-    return {
-      levels: [],
-    };
-  },
-  async fetch() {
-    const levelData = await this.$axios
-      .get(`weeks/${this.week_id}/levels`)
-      .catch((err) => {
-        this.levels = [];
-      });
-    if (levelData) {
-      this.levels = levelData.data.levels;
-    }
+  computed: {
+    week_id() {
+      if (this.levels.length > 0) {
+        return this.levels[0].week_id;
+      }
+    },
   },
   methods: {
-    async deleteLevel(value) {
+    async deleteLevel(level_id) {
       if (prompt('Para deletar o nível, digite "DELETE"') == "DELETE") {
         await this.$axios
-          .delete(`weeks/${this.week_id}/levels/${value}`)
+          .delete(`weeks/${this.week_id}/levels/${level_id}`)
           .catch((error) => {
             alert("Não foi possível deletar o nível!");
           });
-        await this.$fetch();
+
+        return (this.levels = this.levels.filter(
+          (level) => level.id != level_id
+        ));
       }
     },
   },

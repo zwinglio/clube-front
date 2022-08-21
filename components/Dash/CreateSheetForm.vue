@@ -46,7 +46,7 @@
 export default {
   props: {
     level: {
-      type: Number,
+      type: Object,
       required: true,
     },
   },
