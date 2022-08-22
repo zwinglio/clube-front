@@ -39,11 +39,17 @@
             </NuxtLink>
           </div>
         </div>
+        <div
+          v-if="serie.exercises.length == 0"
+          class="alert alert-warning mt-2 small"
+        >
+          Nenhum exercício cadastrado para esta série!
+        </div>
         <DashExercises
-          class="mb-4"
+          class="mb-4 mt-2"
           :week_id="week_id"
           :level_id="level_id"
-          :sheet_id="sheet.id"
+          :sheet_id="sheet_id"
           :serie_id="serie.id"
           :exercises="serie.exercises"
         />
@@ -63,14 +69,13 @@ export default {
       type: Number,
       required: true,
     },
-    sheet: {
+    sheet_id: {
       type: Number,
       required: true,
     },
-  },
-  computed: {
-    series() {
-      return this.sheet.series;
+    series: {
+      type: Array,
+      required: true,
     },
   },
   methods: {
@@ -83,7 +88,10 @@ export default {
           .catch((error) => {
             alert("Não foi possível deletar a série!");
           });
-        await this.$fetch();
+
+        return (this.series = this.series.filter(
+          (serie) => serie.id != serie_id
+        ));
       }
     },
   },
