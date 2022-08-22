@@ -45,29 +45,29 @@ export default {
       type: Number,
       required: true,
     },
-    serie: {
-      type: Object,
+    serie_id: {
+      type: Number,
+      required: true,
+    },
+    exercises: {
+      type: Array,
       required: true,
     },
   },
-  computed: {
-    exercises() {
-      return this.serie.exercises;
-    },
-  },
   methods: {
-    deleteExercise(id) {
+    async deleteExercise(exercise_id) {
       if (prompt("Digite 'DELETE' para confirmar a exclusão") === "DELETE") {
-        this.$axios
+        await this.$axios
           .delete(
-            `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${this.serie_id}/exercises/${id}`
+            `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${this.serie_id}/exercises/${exercise_id}`
           )
-          .then((res) => {
-            this.$fetch();
-          })
           .catch((err) => {
             console.log(err);
           });
+
+        return (this.exercises = this.exercises.filter(
+          (exercise) => exercise.id != exercise_id
+        ));
       }
     },
   },

@@ -44,7 +44,8 @@
           :week_id="week_id"
           :level_id="level_id"
           :sheet_id="sheet.id"
-          :serie="serie"
+          :serie_id="serie.id"
+          :exercises="serie.exercises"
         />
       </div>
     </div>
