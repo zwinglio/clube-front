@@ -7,7 +7,9 @@
           <NuxtLink to="/weeks" class="btn btn-sm btn-outline-secondary">
             Voltar
           </NuxtLink>
-          <a class="btn btn-sm btn-outline-primary">Salvar</a>
+          <a href="#" @click="print()" class="btn btn-sm btn-outline-primary"
+            >Salvar</a
+          >
         </div>
       </div>
 
@@ -49,6 +51,12 @@ export default {
       `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}`
     );
     this.sheet = res.sheet;
+  },
+
+  methods: {
+    print() {
+      window.print();
+    },
   },
 };
 </script>
