@@ -16,19 +16,19 @@
           <div
             v-for="sheet in sheets"
             :key="sheet.id"
-            class="btn-group w-100 py-0"
+            class="btn-group w-100 mt-3"
           >
-            <a href="#" class="btn btn-secondary w-75 py-3 fw-bold">
+            <a href="#" class="btn btn-secondary w-75 fw-bold">
               {{ sheet.objective }}
             </a>
-            <button
+            <a
               type="button"
               class="btn btn-primary w-25"
               data-bs-dismiss="modal"
               @click="closeModalandRedirect($event, sheet.id)"
             >
               <i class="bi bi-play-fill fs-3 text-dark"></i>
-            </button>
+            </a>
           </div>
         </div>
         <div class="modal-footer">
