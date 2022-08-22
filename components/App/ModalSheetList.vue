@@ -61,7 +61,7 @@ export default {
   computed: {
     sheets() {
       // filter sheets where level_id = level.id
-      return this.week.sheets.filter(
+      return this.level.sheets.filter(
         (sheet) => sheet.level_id == this.level.id
       );
     },
