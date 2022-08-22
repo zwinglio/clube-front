@@ -1,9 +1,6 @@
 <template>
   <div class="series">
-    <div
-      v-if="!$fetchState.pending && series.length == 0"
-      class="alert alert-warning"
-    >
+    <div v-if="series.length == 0" class="alert alert-warning">
       Nenhuma série cadastrada!
     </div>
     <div v-else class="serie">
@@ -42,12 +39,19 @@
             </NuxtLink>
           </div>
         </div>
+        <div
+          v-if="serie.exercises.length == 0"
+          class="alert alert-warning mt-2 small"
+        >
+          Nenhum exercício cadastrado para esta série!
+        </div>
         <DashExercises
-          class="mb-4"
+          class="mb-4 mt-2"
           :week_id="week_id"
           :level_id="level_id"
           :sheet_id="sheet_id"
           :serie_id="serie.id"
+          :exercises="serie.exercises"
         />
       </div>
     </div>
@@ -69,24 +73,10 @@ export default {
       type: Number,
       required: true,
     },
-  },
-  async fetch() {
-    const seriesData = await this.$axios
-      .get(
-        `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series`
-      )
-      .then((res) => {
-        return res.data.series;
-      })
-      .catch((err) => {
-        return [];
-      });
-    this.series = seriesData;
-  },
-  data() {
-    return {
-      series: [],
-    };
+    series: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {
     async deleteSerie(serie_id) {
@@ -98,7 +88,10 @@ export default {
           .catch((error) => {
             alert("Não foi possível deletar a série!");
           });
-        await this.$fetch();
+
+        return (this.series = this.series.filter(
+          (serie) => serie.id != serie_id
+        ));
       }
     },
   },

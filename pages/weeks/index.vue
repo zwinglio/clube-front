@@ -48,8 +48,8 @@ export default {
     };
   },
   async fetch() {
-    const weeksData = await this.$axios.$get("/weeks");
-    this.weeks = weeksData;
+    const res = await this.$axios.$get("/weeks");
+    this.weeks = res.weeks;
   },
   computed: {
     user() {

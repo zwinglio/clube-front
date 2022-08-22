@@ -49,39 +49,25 @@ export default {
       type: Number,
       required: true,
     },
-  },
-
-  async fetch() {
-    const exercisesData = await this.$axios
-      .get(
-        `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${this.serie_id}/exercises`
-      )
-      .then((res) => {
-        return res.data.exercises;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    return (this.exercises = exercisesData);
-  },
-  data() {
-    return {
-      exercises: [],
-    };
+    exercises: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {
-    deleteExercise(id) {
+    async deleteExercise(exercise_id) {
       if (prompt("Digite 'DELETE' para confirmar a exclusão") === "DELETE") {
-        this.$axios
+        await this.$axios
           .delete(
-            `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${this.serie_id}/exercises/${id}`
+            `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${this.serie_id}/exercises/${exercise_id}`
           )
-          .then((res) => {
-            this.$fetch();
-          })
           .catch((err) => {
             console.log(err);
           });
+
+        return (this.exercises = this.exercises.filter(
+          (exercise) => exercise.id != exercise_id
+        ));
       }
     },
   },

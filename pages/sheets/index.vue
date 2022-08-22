@@ -7,12 +7,23 @@
           <NuxtLink to="/weeks" class="btn btn-sm btn-outline-secondary">
             Voltar
           </NuxtLink>
-          <a class="btn btn-sm btn-outline-primary">Salvar</a>
+          <a href="#" @click="print()" class="btn btn-sm btn-outline-primary"
+            >Salvar</a
+          >
+        </div>
+      </div>
+
+      <!-- spinner -->
+      <div class="row justify-content-center" v-if="$fetchState.pending">
+        <div class="col-lg-6">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Carregando...</span>
+          </div>
         </div>
       </div>
 
       <!-- Treino -->
-      <AppSheetInfo :sheet="sheet">
+      <AppSheetInfo :sheet="sheet" v-else>
         <AppSheetSerie v-for="serie in sheet.series" :serie="serie" />
       </AppSheetInfo>
     </div>
@@ -21,47 +32,31 @@
 
 <script>
 export default {
-  async fetch() {
-    const sheetData = await this.$axios.$get(
-      `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}`
-    );
-    this.sheet = sheetData.sheet;
-  },
   data() {
     return {
       sheet: {
-        objective: "Objetivo",
-        description: "Descrição",
+        series: [],
         level: {
-          name: "Nome do nível",
-          week: {
-            name: "Semana",
-          },
+          week: {},
         },
-        series: [
-          {
-            name: "Série 01",
-            repetitions: "15 repetições",
-            description: "Instruções da série",
-            exercises: [
-              {
-                name: "Exercício 01",
-                description: "Descrição do exercício",
-                video_url: "dQw4w9WgXcQ",
-                repetitions: "15 repetições",
-              },
-              {
-                name: "Exercício 02",
-                description: "Descrição do exercício",
-              },
-            ],
-          },
-        ],
       },
       week_id: this.$route.params.week_id,
       level_id: this.$route.params.level_id,
       sheet_id: this.$route.params.sheet_id,
     };
+  },
+
+  async fetch() {
+    const res = await this.$axios.$get(
+      `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}`
+    );
+    this.sheet = res.sheet;
+  },
+
+  methods: {
+    print() {
+      window.print();
+    },
   },
 };
 </script>

@@ -24,6 +24,7 @@
                   :week_id="week_id"
                   :level_id="level.id"
                   :sheet_id="sheet.id"
+                  :series="sheet.series"
                 />
                 <div class="row">
                   <div class="col-12">
@@ -81,18 +82,10 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      sheets: [],
-    };
-  },
-  async fetch() {
-    const sheetData = await this.$axios
-      .get(`weeks/${this.week_id}/levels/${this.level.id}/sheets`)
-      .catch((err) => {
-        this.sheets = [];
-      });
-    this.sheets = sheetData.data.sheets;
+  computed: {
+    sheets() {
+      return this.level.sheets;
+    },
   },
   methods: {
     async deleteSheet(value) {
