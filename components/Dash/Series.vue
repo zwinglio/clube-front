@@ -1,9 +1,6 @@
 <template>
   <div class="series">
-    <div
-      v-if="!$fetchState.pending && series.length == 0"
-      class="alert alert-warning"
-    >
+    <div v-if="series.length == 0" class="alert alert-warning">
       Nenhuma série cadastrada!
     </div>
     <div v-else class="serie">
@@ -46,8 +43,8 @@
           class="mb-4"
           :week_id="week_id"
           :level_id="level_id"
-          :sheet_id="sheet_id"
-          :serie_id="serie.id"
+          :sheet_id="sheet.id"
+          :serie="serie"
         />
       </div>
     </div>
@@ -65,28 +62,15 @@ export default {
       type: Number,
       required: true,
     },
-    sheet_id: {
+    sheet: {
       type: Number,
       required: true,
     },
   },
-  async fetch() {
-    const seriesData = await this.$axios
-      .get(
-        `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series`
-      )
-      .then((res) => {
-        return res.data.series;
-      })
-      .catch((err) => {
-        return [];
-      });
-    this.series = seriesData;
-  },
-  data() {
-    return {
-      series: [],
-    };
+  computed: {
+    series() {
+      return this.sheet.series;
+    },
   },
   methods: {
     async deleteSerie(serie_id) {

@@ -45,29 +45,15 @@ export default {
       type: Number,
       required: true,
     },
-    serie_id: {
-      type: Number,
+    serie: {
+      type: Object,
       required: true,
     },
   },
-
-  async fetch() {
-    const exercisesData = await this.$axios
-      .get(
-        `weeks/${this.week_id}/levels/${this.level_id}/sheets/${this.sheet_id}/series/${this.serie_id}/exercises`
-      )
-      .then((res) => {
-        return res.data.exercises;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    return (this.exercises = exercisesData);
-  },
-  data() {
-    return {
-      exercises: [],
-    };
+  computed: {
+    exercises() {
+      return this.serie.exercises;
+    },
   },
   methods: {
     deleteExercise(id) {
