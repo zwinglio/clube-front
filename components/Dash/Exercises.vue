@@ -3,7 +3,11 @@
     <div v-for="exercise in exercises" class="row rounded-3 mt-2">
       <div class="col-4">
         <img
-          src="https://img.youtube.com/vi/syyeLkbTs04/hqdefault.jpg"
+          :src="
+            'https://img.youtube.com/vi/' +
+            exercise.video_url +
+            '/hqdefault.jpg'
+          "
           type="button"
           data-bs-toggle="modal"
           class="w-100"
@@ -20,6 +24,17 @@
         >
           Excluir
         </button>
+        <NuxtLink
+          :to="{
+            name: 'dashboard-edit-exercise',
+            params: {
+              data: [week_id, level_id, sheet_id, serie_id, exercise],
+            },
+          }"
+          class="btn btn-outline-success btn-sm small py-0"
+        >
+          Editar
+        </NuxtLink>
       </div>
       <DashVideoModal
         :video_url="exercise.video_url"
