@@ -23,7 +23,7 @@
           <iframe
             width="560"
             height="315"
-            :src="video_url"
+            :src="'https://www.youtube.com/embed/' + video_url + '?rel=0'"
             title="YouTube video player"
             class="w-100"
             frameborder="0"
@@ -39,7 +39,6 @@
           >
             Close
           </button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
