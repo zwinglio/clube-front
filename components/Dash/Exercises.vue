@@ -3,7 +3,11 @@
     <div v-for="exercise in exercises" class="row rounded-3 mt-2">
       <div class="col-4">
         <img
-          src="https://img.youtube.com/vi/syyeLkbTs04/hqdefault.jpg"
+          :src="
+            'https://img.youtube.com/vi/' +
+            exercise.video_url +
+            '/hqdefault.jpg'
+          "
           type="button"
           data-bs-toggle="modal"
           class="w-100"
