@@ -20,6 +20,17 @@
         >
           Excluir
         </button>
+        <NuxtLink
+          :to="{
+            name: 'dashboard-edit-exercise',
+            params: {
+              data: [week_id, level_id, sheet_id, serie_id, exercise],
+            },
+          }"
+          class="btn btn-outline-success btn-sm small py-0"
+        >
+          Editar
+        </NuxtLink>
       </div>
       <DashVideoModal
         :video_url="exercise.video_url"
