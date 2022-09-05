@@ -66,20 +66,26 @@
 <script>
 export default {
   props: {
-    routeData: {
-      type: Array,
-      default: () => [],
+    exercise: {
+      type: Object,
+      required: true,
     },
-  },
-  data() {
-    return {
-      // TODO: melhorar isso aqui
-      exercise: this.$props.routeData[4],
-      week_id: this.$props.routeData[0],
-      level_id: this.$props.routeData[1],
-      serie_id: this.$props.routeData[2],
-      sheet_id: this.$props.routeData[3],
-    };
+    week_id: {
+      type: Number,
+      required: true,
+    },
+    level_id: {
+      type: Number,
+      required: true,
+    },
+    sheet_id: {
+      type: Number,
+      required: true,
+    },
+    serie_id: {
+      type: Number,
+      required: true,
+    },
   },
   methods: {
     async updateExercise() {
