@@ -5,7 +5,13 @@
         <div class="col-lg-6">
           <NuxtLink to="/dashboard" class="btn btn-secondary">Voltar</NuxtLink>
           <h1 class="mt-4">Editar exercício</h1>
-          <DashEditExerciseForm :routeData="routeData" />
+          <DashEditExerciseForm
+            :week_id="week_id"
+            :level_id="level_id"
+            :sheet_id="sheet_id"
+            :serie_id="serie_id"
+            :exercise="exercise"
+          />
         </div>
       </div>
     </div>
@@ -14,13 +20,14 @@
 
 <script>
 export default {
-  computed: {
-    exercise() {
-      return this.$route.params.data[4];
-    },
-    routeData() {
-      return this.$route.params.data;
-    },
+  data() {
+    return {
+      week_id: this.$route.params.week_id,
+      level_id: this.$route.params.level_id,
+      sheet_id: this.$route.params.sheet_id,
+      serie_id: this.$route.params.serie_id,
+      exercise: this.$route.params.exercise,
+    };
   },
 };
 </script>
