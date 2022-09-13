@@ -46,6 +46,7 @@ export default {
       laravelJWT: {
         provider: "laravel/jwt",
         url: "https://clube-api.voceemforma.net/api/",
+        // url: "http://127.0.0.1:8000/api/",
         endpoints: {
           login: {
             url: "auth/login",
