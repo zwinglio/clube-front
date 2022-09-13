@@ -11,11 +11,16 @@
             </div>
             <div class="col text-end">
               <NuxtLink
-                to="/weeks"
-                class="btn btn-outline-primary fw-bold"
+                to="/dashboard/import"
+                class="btn btn-outline-primary fw-bold position-relative"
                 disabled
               >
-                Treinos
+                Impotar
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                >
+                  Novo
+                </span>
               </NuxtLink>
               <NuxtLink
                 to="/weeks"
