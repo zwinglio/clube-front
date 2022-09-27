@@ -6,7 +6,7 @@
           <img src="https://via.placeholder.com/300x400" alt="promessa" />
         </div>
         <div class="col-lg-7">
-          <h1>Conheça sua nova personal, Carina Rosin!</h1>
+          <h2>Conheça sua nova personal, Carina Rosin!</h2>
           <p>
             <strong>COMECE A PERDER PESO!</strong> Lorem ipsum dolor sit amet,
             consectetur adipisicing elit. Earum asperiores enim labore officiis
@@ -25,6 +25,7 @@
 
 <style>
 #personal {
-  background-color: #2f4858;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    #2f4858;
 }
 </style>

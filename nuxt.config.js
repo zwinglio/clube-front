@@ -45,8 +45,8 @@ export default {
     strategies: {
       laravelJWT: {
         provider: "laravel/jwt",
-        url: "https://clube-api.voceemforma.net/api/",
-        // url: "http://127.0.0.1:8000/api/",
+        // url: "https://clube-api.voceemforma.net/api/",
+        url: "http://127.0.0.1:8000/api/",
         endpoints: {
           login: {
             url: "auth/login",
@@ -75,8 +75,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: "https://clube-api.voceemforma.net/api/",
-    // baseURL: "http://127.0.0.1:8000/api/",
+    // baseURL: "https://clube-api.voceemforma.net/api/",
+    baseURL: "http://127.0.0.1:8000/api/",
     credentials: true,
   },
 
@@ -103,7 +103,7 @@ export default {
     prefetch: true,
     families: {
       "League+Gothic": [400],
-      "Inter": [200, 400, 700],
+      "Inter": [200, 400, 700, 900],
     },
     download: true,
     overwrite: true,

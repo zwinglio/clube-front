@@ -1,16 +1,45 @@
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    value: {
+      type: String,
+      required: true,
+    },
+  },
+};
+</script>
+
 <template>
   <div class="row">
     <div class="col-lg-2">
-      <h2>01</h2>
+      <h3>{{ value }}</h3>
     </div>
     <div class="col-lg-10">
-      <p>TESTE AQUI PRA VER</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam modi
-        magni, rerum consequuntur quos vel deserunt fugit beatae recusandae
-        impedit. Nam, aperiam reiciendis quo officia numquam doloremque odio
-        sapiente obcaecati.
-      </p>
+      <p class="fw-bold">{{ title }}</p>
+      <slot />
     </div>
   </div>
 </template>
+
+<style scoped>
+h3 {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 900;
+  font-size: 62px;
+  line-height: 95.5%;
+  margin-top: 15px;
+}
+
+.row {
+  margin-top: 55px;
+}
+
+p {
+  margin-top: 15px;
+}
+</style>

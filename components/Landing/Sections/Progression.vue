@@ -1,13 +1,49 @@
+<script>
+export default {
+  data() {
+    return {
+      levels: [
+        {
+          name: "Iniciante",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut aspernatur!",
+          icon: "🥰",
+        },
+        {
+          name: "Itermediário",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut aspernatur!",
+          icon: "💪",
+        },
+        {
+          name: "Avançado",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut aspernatur!",
+          icon: "😰",
+        },
+      ],
+    };
+  },
+};
+</script>
+
 <template>
   <section id="promessa">
     <div class="container">
       <div class="row mt-5">
-        <div class="col-lg-5 text-center">
-          <img src="https://via.placeholder.com/300" alt="promessa" />
+        <div class="col-lg-6 text-center">
+          <nuxt-img src="/img/logo.png" />
         </div>
-        <div class="col-lg-7">
-          <h2>Comece de onde faz sentido pra você!</h2>
+        <div class="col-lg-6">
+          <h2 class="mt-4">Comece de onde faz sentido pra você!</h2>
           <hr />
+          <p>
+            <strong>COMECE A PERDER PESO!</strong> Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Earum asperiores enim labore officiis
+            nemo. Quisquam ut dolore commodi id aperiam numquam labore
+            quibusdam. Dolore molestias quidem nostrum perferendis consequuntur!
+            Exercitationem.
+          </p>
           <p>
             <strong>COMECE A PERDER PESO!</strong> Lorem ipsum dolor sit amet,
             consectetur adipisicing elit. Earum asperiores enim labore officiis
@@ -17,28 +53,8 @@
           </p>
         </div>
       </div>
-      <div class="d-flex levels">
-        <div class="level">
-          <h3>Inciante</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut
-            aspernatur!
-          </p>
-        </div>
-        <div class="level">
-          <h3>Intermediário</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut
-            aspernatur!
-          </p>
-        </div>
-        <div class="level">
-          <h3>Avançado</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut
-            aspernatur!
-          </p>
-        </div>
+      <div class="row levels justify-content-center">
+        <LandingPartialsLevelItem v-for="level in levels" :level="level" />
       </div>
     </div>
   </section>
@@ -47,17 +63,13 @@
 <style scoped>
 img {
   border-radius: 15px;
-  filter: drop-shadow(15px 15px 0px #00df7b);
+  filter: drop-shadow(10px 10px 0px #00df7b);
+  width: 65%;
 }
 
-.levels {
-  margin-top: 45px;
-}
-
-.level {
-  padding: 45px 25px;
-  background-color: #000000;
-  margin: 0 15px;
-  border-radius: 25px;
+@media (max-width: 992px) {
+  img {
+    width: 90%;
+  }
 }
 </style>
