@@ -3,13 +3,14 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2>07 dias gratis!</h2>
+          <h2>07 dias grátis!</h2>
           <hr class="w-100" />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
             obcaecati sunt, nemo totam est fugiat tempora in ex saepe impedit
             fugit soluta! Ut totam odio quam tempore quod, sit numquam!
           </p>
+          <a href="#" class="btn btn-primary">Experimente agora!</a>
         </div>
       </div>
     </div>
@@ -19,7 +20,7 @@
 <style scoped>
 #garantia {
   background-color: #00657c;
-  padding: 85px 0;
+  padding: 75px 0;
 }
 
 h2 {
@@ -28,9 +29,13 @@ h2 {
   font-weight: 900;
   font-size: 62px;
   line-height: 95.5%;
-  /* or 59px */
-
   text-align: center;
   text-transform: uppercase;
+}
+.btn-primary {
+  background: #00df7b;
+  border-radius: 10px;
+  padding: 20px 150px;
+  margin: 10px 0 10px 0;
 }
 </style>

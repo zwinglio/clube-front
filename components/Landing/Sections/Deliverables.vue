@@ -28,7 +28,9 @@
             debitis ratione atque doloremque placeat ducimus harum nulla culpa,
             aliquam numquam, quidem in?
           </p>
-          <p>R$ 49,90 / mês</p>
+          <div class="preco text-center mb-4">
+            <nuxt-img src="/img/landing/preco.png" class="align-center" />
+          </div>
           <a href="#" class="btn btn-warning w-100 mt-3">Começar agora!</a>
         </div>
       </div>
@@ -42,7 +44,6 @@
     #2f4858;
   padding: 65px 0;
 }
-
 .btn-warning {
   filter: drop-shadow(0px 0px 12px #f18924);
   background: #f18924;

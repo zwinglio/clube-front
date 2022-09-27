@@ -1,7 +1,7 @@
 <template>
   <section id="promessa">
     <div class="container">
-      <div class="row mt-5">
+      <div class="row mt-5 align-items-center">
         <div class="col-lg-5">
           <h1>O caminho certo para perder peso!</h1>
           <p class="mt-4">
