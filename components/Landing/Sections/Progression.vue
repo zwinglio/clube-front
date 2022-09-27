@@ -32,7 +32,7 @@ export default {
     <div class="container">
       <div class="row mt-5">
         <div class="col-lg-6 text-center">
-          <nuxt-img src="/img/logo.png" />
+          <nuxt-img src="/img/landing/carina_notebook.png" />
         </div>
         <div class="col-lg-6">
           <h2 class="mt-4">Comece de onde faz sentido pra você!</h2>
@@ -61,11 +61,11 @@ export default {
 </template>
 
 <style scoped>
-img {
+/* img {
   border-radius: 15px;
   filter: drop-shadow(10px 10px 0px #00df7b);
   width: 65%;
-}
+} */
 
 @media (max-width: 992px) {
   img {
