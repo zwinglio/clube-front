@@ -31,7 +31,11 @@
           <div class="preco text-center mb-4">
             <nuxt-img src="/img/landing/preco.png" class="align-center" />
           </div>
-          <a href="#" class="btn btn-warning w-100 mt-3">Começar agora!</a>
+          <a
+            href="https://pay.hotmart.com/Y75265846W"
+            class="btn btn-primary w-100 mt-4 mb-4"
+            >Começar agora!</a
+          >
         </div>
       </div>
     </div>

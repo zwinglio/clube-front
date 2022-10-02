@@ -36,7 +36,11 @@
             corrupti voluptates, ducimus nam quidem fuga fugit minus sit
             pariatur aperiam minima eveniet error porro.
           </LandingPartialsPlausabilityItem>
-          <a href="#" class="btn btn-primary w-100">Começar agora!</a>
+          <a
+            href="https://pay.hotmart.com/Y75265846W"
+            class="btn btn-primary w-100 mt-4 mb-4"
+            >Quero assinar agora!</a
+          >
         </div>
       </div>
     </div>

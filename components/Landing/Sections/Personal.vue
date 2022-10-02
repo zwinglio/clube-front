@@ -21,9 +21,11 @@
             quibusdam. Dolore molestias quidem nostrum perferendis consequuntur!
             Exercitationem.
           </p>
-          <NuxtLink to="login" class="btn btn-primary w-100">
-            Faça o login!
-          </NuxtLink>
+          <a
+            href="https://pay.hotmart.com/Y75265846W"
+            class="btn btn-primary w-100 mt-4 mb-4"
+            >Ter uma personal de bolso!</a
+          >
         </div>
       </div>
     </div>
