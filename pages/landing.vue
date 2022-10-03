@@ -1,12 +1,12 @@
 <template>
   <div class="landing">
-    <LandingSectionsPromise />
-    <LandingSectionsPlausability />
+    <LandingSectionsPromise :checkoutLink="checkoutLink" />
+    <LandingSectionsPlausability :checkoutLink="checkoutLink" />
     <LandingSectionsProgression />
-    <LandingSectionsPersonal />
+    <LandingSectionsPersonal :checkoutLink="checkoutLink" />
     <LandingSectionsSocialProof />
-    <LandingSectionsDeliverables />
-    <LandingSectionsWarranty />
+    <LandingSectionsDeliverables :checkoutLink="checkoutLink" />
+    <LandingSectionsWarranty :checkoutLink="checkoutLink" />
     <LandingSectionsFaq />
     <LandingSectionsFooter />
   </div>
@@ -15,6 +15,12 @@
 <script scoped>
 export default {
   layout: "DefaultLayout",
+
+  data() {
+    return {
+      checkoutLink: "https://pay.hotmart.com/Y75265846W",
+    };
+  },
 };
 </script>
 

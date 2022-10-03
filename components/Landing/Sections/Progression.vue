@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <section id="promessa">
+  <section id="progression">
     <div class="container">
       <div class="row mt-5">
         <div class="col-lg-6 text-center">

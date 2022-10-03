@@ -1,3 +1,14 @@
+<script>
+export default {
+  props: {
+    checkoutLink: {
+      type: String,
+      default: null,
+    },
+  },
+};
+</script>
+
 <template>
   <section id="promessa">
     <div class="container">
@@ -11,9 +22,13 @@
             quibusdam. Dolore molestias quidem nostrum perferendis consequuntur!
             Exercitationem.
           </p>
-          <NuxtLink to="login" class="btn btn-primary w-100 mt-4 mb-4">
+          <a
+            :href="checkoutLink"
+            target="_blank"
+            class="btn btn-primary w-100 mt-4 mb-4"
+          >
             Quero fazer parte!
-          </NuxtLink>
+          </a>
         </div>
         <div class="col-lg-7 text-center">
           <nuxt-img

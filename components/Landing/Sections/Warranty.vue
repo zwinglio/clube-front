@@ -1,3 +1,14 @@
+<script>
+export default {
+  props: {
+    checkoutLink: {
+      type: String,
+      default: null,
+    },
+  },
+};
+</script>
+
 <template>
   <section id="garantia">
     <div class="container">
@@ -10,7 +21,7 @@
             obcaecati sunt, nemo totam est fugiat tempora in ex saepe impedit
             fugit soluta! Ut totam odio quam tempore quod, sit numquam!
           </p>
-          <a href="#" class="btn btn-primary">Experimente agora!</a>
+          <a :href="checkoutLink" class="btn btn-primary">Experimente agora!</a>
         </div>
       </div>
     </div>

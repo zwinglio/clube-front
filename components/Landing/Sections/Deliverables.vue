@@ -1,3 +1,14 @@
+<script>
+export default {
+  props: {
+    checkoutLink: {
+      type: String,
+      default: null,
+    },
+  },
+};
+</script>
+
 <template>
   <section id="entregavies">
     <div class="container">
@@ -32,7 +43,8 @@
             <nuxt-img src="/img/landing/preco.png" class="align-center" />
           </div>
           <a
-            href="https://pay.hotmart.com/Y75265846W"
+            :href="checkoutLink"
+            target="_blank"
             class="btn btn-primary w-100 mt-4 mb-4"
             >Começar agora!</a
           >
