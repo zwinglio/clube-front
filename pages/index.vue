@@ -41,7 +41,7 @@ export default {
 
 <style>
 section {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 </style>

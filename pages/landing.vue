@@ -1,20 +1,26 @@
 <template>
   <div class="landing">
-    <LandingSectionsPromise />
-    <LandingSectionsPlausability />
+    <LandingSectionsPromise :checkoutLink="checkoutLink" />
+    <LandingSectionsPlausability :checkoutLink="checkoutLink" />
     <LandingSectionsProgression />
-    <LandingSectionsPersonal />
+    <LandingSectionsPersonal :checkoutLink="checkoutLink" />
     <LandingSectionsSocialProof />
-    <LandingSectionsDeliverables />
-    <LandingSectionsWarranty />
+    <LandingSectionsDeliverables :checkoutLink="checkoutLink" />
+    <LandingSectionsWarranty :checkoutLink="checkoutLink" />
     <LandingSectionsFaq />
     <LandingSectionsFooter />
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   layout: "DefaultLayout",
+
+  data() {
+    return {
+      checkoutLink: "https://pay.hotmart.com/Y75265846W",
+    };
+  },
 };
 </script>
 
@@ -25,11 +31,40 @@ section {
 }
 
 .btn-primary {
-  filter: drop-shadow(0px 0px 12px #00df7b);
+  filter: drop-shadow(0px 0px 5px #00df7b);
   font-weight: 900;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
   padding: 15px;
+  margin-top: 45px;
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+
+.btn:hover,
+.btn:focus {
+  text-transform: uppercase;
+  letter-spacing: 150%;
+  color: #fff;
+}
+
+hr {
+  border-top: 2px solid var(--primary-color);
+  width: 150px;
+}
+
+h1 {
+  font-size: 90px;
+  line-height: 93.5%;
+}
+
+h2 {
+  font-size: 64px;
+  line-height: 93.5%;
+}
+
+p {
+  margin-top: 35px;
 }
 </style>
