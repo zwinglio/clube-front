@@ -1,5 +1,6 @@
 <template>
   <div class="landing">
+    <LandingSectionsMenu />
     <LandingSectionsPromise :checkoutLink="checkoutLink" />
     <LandingSectionsPlausability :checkoutLink="checkoutLink" />
     <LandingSectionsProgression />

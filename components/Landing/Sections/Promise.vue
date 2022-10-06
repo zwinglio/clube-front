@@ -12,7 +12,7 @@ export default {
 <template>
   <section id="promessa">
     <div class="container">
-      <div class="row mt-5 align-items-center">
+      <div class="row align-items-center">
         <div class="col-lg-6">
           <h1>PERCA PESO E GANHE MASSA MAGRA SEM MUDAR DE ACADEMIA!</h1>
           <p class="mt-4"></p>
