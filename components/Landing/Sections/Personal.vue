@@ -18,6 +18,7 @@ export default {
             src="/img/landing/carina_cintura.png"
             alt="promessa"
             format="webp"
+            loading="lazy"
             class="w-100"
           />
         </div>
