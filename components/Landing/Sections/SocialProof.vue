@@ -20,7 +20,7 @@ export default {
     <div class="container">
       <div class="row text-center">
         <div class="col-lg-4" v-for="proof in proofs">
-          <nuxt-img :src="proof" />
+          <nuxt-img :src="proof" format="webp" loading="lazy" />
         </div>
       </div>
     </div>

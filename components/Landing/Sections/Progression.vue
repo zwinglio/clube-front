@@ -32,7 +32,7 @@ export default {
     <div class="container">
       <div class="row mt-5">
         <div class="col-lg-6 text-center">
-          <nuxt-img src="/img/landing/carina_notebook.png" />
+          <nuxt-img src="/img/landing/carina_notebook.png" format="webp" />
         </div>
         <div class="col-lg-6">
           <h2 class="mt-4">Comece de onde faz sentido pra você!</h2>

@@ -46,6 +46,9 @@ export default {
         <div class="col-lg-6 text-center">
           <nuxt-img
             src="/img/landing/carina01.png"
+            format="webp"
+            placeholder
+            sizes="sm:100vw md:50vw lg:400px"
             alt="promessa"
             class="w-100"
           />

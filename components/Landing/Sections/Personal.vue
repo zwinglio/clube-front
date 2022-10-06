@@ -17,6 +17,7 @@ export default {
           <nuxt-img
             src="/img/landing/carina_cintura.png"
             alt="promessa"
+            format="webp"
             class="w-100"
           />
         </div>
