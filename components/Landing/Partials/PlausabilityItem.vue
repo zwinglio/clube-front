@@ -35,6 +35,9 @@ h3 {
   margin-top: 15px;
 }
 
+p {
+  text-transform: uppercase;
+}
 .row {
   margin-top: 55px;
 }

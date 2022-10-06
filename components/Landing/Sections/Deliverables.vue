@@ -14,32 +14,39 @@ export default {
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <h2>Treino novo no seu celular toda semana!</h2>
+          <h2>
+            Treino novo no seu celular toda semana, com o suporte que você
+            merece!
+          </h2>
           <h3>O QUE VOCÊ VAI RECBER?</h3>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            repellendus doloremque illu m sint praesentium culpa rem numquam
-            iure non aliquid corrupti laborum illo aliquam tenetur soluta
-            laudantium, asperiores aut consequuntur!
+            12 semanas de treinos, divididos em níveis iniciante e
+            intermediário/avançado. Com vídeos de instruções para que você possa
+            executar os treinos sozinho na sua academia ou na academia do seu
+            condomínio. Além disso, o aluno tem acesso DIRETO ao personal para
+            tirar dúvidas, adaptar treinos e pedir dicas sobre a prática de
+            exercícios físicos.
           </p>
           <ul>
-            <li>Vai receber isso</li>
-            <li>Assim</li>
-            <li>Na plataforma</li>
-            <li>Suporte direto</li>
-            <li>Tal</li>
+            <li>12 semanas de treino</li>
+            <li>Todos os níveis de intensidade</li>
+            <li>Vídeos de execução de cada exercício</li>
+            <li>
+              Lista de treinos sempre disponível pra você fazer na sua academia
+            </li>
+            <li>
+              Personal trainer a um toque de distância para adaptações e dúvidas
+            </li>
+            <li>Acesso imediato no celular, tablet ou computador</li>
+            <li>Acompanhamento de medidas e progressão (em breve)</li>
+            <li>Conteúdo exclusivo pra assinantes (em breve)</li>
           </ul>
           <h4 class="text-warning">
-            POR APENAS 99 CENTAVOS POR DIA VOCÊ TEM ACESSO COMPLETO AO...
+            POR MENOS DE R$ 1,60 POR DIA VOCÊ GARANTE UMA ROTINA SAUDÁVEL E
+            ALCANÇA O CORPO QUE VOCÊ DESEJA
           </h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            expedita eaque doloremque tenetur! Ad nisi tempore repellendus
-            debitis ratione atque doloremque placeat ducimus harum nulla culpa,
-            aliquam numquam, quidem in?
-          </p>
-          <div class="preco text-center mb-4">
+          <div class="preco text-center mt-4 mb-4">
             <nuxt-img src="/img/landing/preco.png" class="align-center" />
           </div>
           <a
@@ -79,6 +86,6 @@ h4 {
   font-style: italic;
   font-weight: 900;
   font-size: 18px;
-  line-height: 95.5%;
+  line-height: 115%;
 }
 </style>

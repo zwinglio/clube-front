@@ -6,19 +6,19 @@ export default {
         {
           name: "Iniciante",
           description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut aspernatur!",
+            "Os níveis foram divididos em iniciante e intermediário/avançado para garantir que o aluno progrida e tenha sempre a sensação de crescimento pessoal durante a prática de exercício.",
           icon: "🥰",
         },
         {
           name: "Itermediário",
           description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut aspernatur!",
+            "Você já pratica exercícios e quer elevar seu treino para o próximo nível, aqui você trabalhar com ainda mais intensidade para conseguir avançar, sair do platô e colher os resultados que você não conseguiria enxergar treinando sem o acompanhamento adequado.",
           icon: "💪",
         },
         {
           name: "Avançado",
           description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, aut aspernatur!",
+            "Treina quase todo dia? Demora horas na academia? A prática tá ficando monótona? Sem problemas, no nível avançado você vai ser levado a sua carga máxima, potência máxima e intensidade máxima! Tudo isso de forma dinâmica e com o personal ao seu alcance!",
           icon: "😰",
         },
       ],
@@ -38,18 +38,15 @@ export default {
           <h2 class="mt-4">Comece de onde faz sentido pra você!</h2>
           <hr />
           <p>
-            <strong>COMECE A PERDER PESO!</strong> Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Earum asperiores enim labore officiis
-            nemo. Quisquam ut dolore commodi id aperiam numquam labore
-            quibusdam. Dolore molestias quidem nostrum perferendis consequuntur!
-            Exercitationem.
+            Para garantir que você progrida e sempre tenha a sensação de avanço
+            na prática dos exercícios, os treinos foram divididos em iniciante e
+            intermediário/avançado.
           </p>
           <p>
-            <strong>COMECE A PERDER PESO!</strong> Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Earum asperiores enim labore officiis
-            nemo. Quisquam ut dolore commodi id aperiam numquam labore
-            quibusdam. Dolore molestias quidem nostrum perferendis consequuntur!
-            Exercitationem.
+            Além da motivação, essa abordagem te coloca no ritmo certo, evita
+            lesões e fortalece seus músculos e trabalha a sua resistência para
+            que você se sinta seguro de progredir para a próxima etapa. Tudo tem
+            que acontecer no seu tempo e adaptado ao seu corpo.
           </p>
         </div>
       </div>
