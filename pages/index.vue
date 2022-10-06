@@ -31,11 +31,11 @@
 <script>
 export default {
   layout: "DefaultLayout",
-  // middleware: [
-  //   function ({ redirect }) {
-  //     redirect("/landing");
-  //   },
-  // ],
+  middleware: [
+    function ({ redirect }) {
+      redirect("/landing");
+    },
+  ],
 };
 </script>
 

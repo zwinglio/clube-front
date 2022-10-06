@@ -17,9 +17,9 @@ export default {
           <h2>07 dias grátis!</h2>
           <hr class="w-100" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            obcaecati sunt, nemo totam est fugiat tempora in ex saepe impedit
-            fugit soluta! Ut totam odio quam tempore quod, sit numquam!
+            Você pode testar o Clube da Musculação por 7 dias! E se você não se
+            adaptar, por qualquer motivo, pode pedir seu dinheiro de volta. É só
+            mandar uma mensagem no contato@voceemforma.net ou no aplicativo.
           </p>
           <a :href="checkoutLink" class="btn btn-primary">Experimente agora!</a>
         </div>
