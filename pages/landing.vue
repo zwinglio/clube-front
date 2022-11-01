@@ -19,7 +19,7 @@ export default {
 
   data() {
     return {
-      checkoutLink: "https://pay.hotmart.com/Y75265846W",
+      checkoutLink: "https://pay.hotmart.com/T76214790K",
     };
   },
 };
