@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Clube da Musculação",
+    title: "Clube da Musculação 🔥",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -39,7 +39,15 @@ export default {
   buildModules: ["@nuxtjs/google-fonts", "@nuxt/image", '@nuxtjs/pwa'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image", "@nuxtjs/auth-next"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image", "@nuxtjs/auth-next", "@nuxtjs/gtm"],
+
+  gtm: {
+    enabled: true,
+    id: 'GTM-M9VHPR5',
+    noscript: true,
+    noscriptId: 'gtm-noscript',
+    noscriptURL: 'https://www.googletagmanager.com/ns.html'
+  },
 
   auth: {
     strategies: {
