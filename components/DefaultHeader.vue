@@ -12,7 +12,7 @@
             >
               Painel
             </NuxtLink>
-            <a href="#" class="btn btn-primary disabled" disabled>Perfil</a>
+            <NuxtLink to="/profile" class="btn btn-primary"> Perfil </NuxtLink>
             <button @click="logout" class="btn btn-primary">Logout</button>
           </div>
         </div>
