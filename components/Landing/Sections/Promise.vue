@@ -45,10 +45,9 @@ export default {
         </div>
         <div class="col-lg-6 text-center">
           <nuxt-img
-            src="/img/landing/carina01.png"
+            src="/img/landing/carina_tata_cocielo.png"
             format="webp"
-            placeholder
-            sizes="sm:100vw md:50vw lg:400px"
+            sizes="sm:100vw md:50vw lg:587px"
             alt="promessa"
             class="w-100"
           />
