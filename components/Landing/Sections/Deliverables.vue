@@ -43,18 +43,14 @@ export default {
             <li>Conteúdo exclusivo pra assinantes (em breve)</li>
           </ul>
           <h4 class="text-warning">
-            POR MENOS DE R$ 1,60 POR DIA VOCÊ GARANTE UMA ROTINA SAUDÁVEL E
+            POR MENOS DE R$ 0,70 POR DIA VOCÊ GARANTE UMA ROTINA SAUDÁVEL E
             ALCANÇA O CORPO QUE VOCÊ DESEJA
           </h4>
-          <div class="preco text-center mt-4 mb-4">
+          <!-- <div class="preco text-center mt-4 mb-4">
             <nuxt-img src="/img/landing/preco.png" class="align-center" />
-          </div>
-          <a
-            :href="checkoutLink"
-            target="_blank"
-            class="btn btn-primary w-100 mt-4 mb-4"
-            >Começar agora!</a
-          >
+          </div> -->
+          <LandingPartialsPlans />
+          <p class="small opacity-75 m-0">* Preços válidos até 13/11/2022</p>
         </div>
       </div>
     </div>
