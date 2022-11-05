@@ -1,3 +1,14 @@
+<script>
+export default {
+  props: {
+    checkoutLink: {
+      type: String,
+      default: null,
+    },
+  },
+};
+</script>
+
 <template>
   <div class="row justify-content-center mt-4">
     <div class="col-lg-5">

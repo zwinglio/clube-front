@@ -49,7 +49,7 @@ export default {
           <!-- <div class="preco text-center mt-4 mb-4">
             <nuxt-img src="/img/landing/preco.png" class="align-center" />
           </div> -->
-          <LandingPartialsPlans />
+          <LandingPartialsPlans :checkoutLink="checkoutLink" />
           <p class="small opacity-75 m-0">* Preços válidos até 13/11/2022</p>
         </div>
       </div>
