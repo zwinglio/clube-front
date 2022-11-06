@@ -13,16 +13,16 @@ export default {
   <section id="personal">
     <div class="container">
       <div class="row mt-5 align-items-center">
-        <div class="col-lg-5 text-center order-1 order-lg-0">
+        <div class="col-lg-6 text-center order-1 order-lg-0">
           <nuxt-img
-            src="/img/landing/carina_cintura.png"
+            src="/img/landing/carina01.png"
             alt="promessa"
             format="webp"
             loading="lazy"
             class="w-100"
           />
         </div>
-        <div class="col-lg-7 order-0 order-lg-1">
+        <div class="col-lg-6 order-0 order-lg-1">
           <h2>Conheça sua nova personal, Carina Rosin!</h2>
           <p>
             Carina Rosin será sua nova personal durante esses 40 dias. Formada
@@ -51,8 +51,9 @@ export default {
             :href="checkoutLink"
             target="_blank"
             class="btn btn-primary w-100 mt-4 mb-4"
-            >Ter uma personal de bolso!</a
           >
+            Ter uma personal de bolso!
+          </a>
         </div>
       </div>
     </div>
@@ -67,7 +68,7 @@ export default {
 }
 
 img {
-  margin-top: 0px;
+  margin-top: 90px;
   width: 75%;
 }
 

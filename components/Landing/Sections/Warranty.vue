@@ -21,7 +21,9 @@ export default {
             adaptar, por qualquer motivo, pode pedir seu dinheiro de volta. É só
             mandar uma mensagem no contato@voceemforma.net ou no aplicativo.
           </p>
-          <a :href="checkoutLink" class="btn btn-primary">Experimente agora!</a>
+          <a :href="checkoutLink" class="btn btn-primary w-100">
+            Experimente agora!
+          </a>
         </div>
       </div>
     </div>
@@ -46,7 +48,7 @@ h2 {
 .btn-primary {
   background: #00df7b;
   border-radius: 10px;
-  padding: 20px 150px;
+  padding: 20px 20px;
   margin: 10px 0 10px 0;
 }
 </style>

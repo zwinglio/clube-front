@@ -12,8 +12,17 @@ export default {
 <template>
   <section id="entregavies">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
+      <div class="row gap-5 justify-content-center align-items-center">
+        <div class="col-lg-4 text-center">
+          <nuxt-img
+            src="/img/landing/devices.png"
+            alt="promessa"
+            format="webp"
+            loading="lazy"
+            class="w-100"
+          />
+        </div>
+        <div class="col-lg-7">
           <h2>
             Treino novo no seu celular toda semana, com o suporte que você
             merece!
@@ -43,20 +52,15 @@ export default {
             <li>Conteúdo exclusivo pra assinantes (em breve)</li>
           </ul>
           <h4 class="text-warning">
-            POR MENOS DE R$ 1,60 POR DIA VOCÊ GARANTE UMA ROTINA SAUDÁVEL E
+            POR MENOS DE R$ 0,70 POR DIA VOCÊ GARANTE UMA ROTINA SAUDÁVEL E
             ALCANÇA O CORPO QUE VOCÊ DESEJA
           </h4>
-          <div class="preco text-center mt-4 mb-4">
+          <!-- <div class="preco text-center mt-4 mb-4">
             <nuxt-img src="/img/landing/preco.png" class="align-center" />
-          </div>
-          <a
-            :href="checkoutLink"
-            target="_blank"
-            class="btn btn-primary w-100 mt-4 mb-4"
-            >Começar agora!</a
-          >
+          </div> -->
         </div>
       </div>
+      <LandingPartialsPlans :checkoutLink="checkoutLink" />
     </div>
   </section>
 </template>
