@@ -58,8 +58,10 @@ export default {
           class="btn btn-primary w-100 mt-4 mb-4"
           >Garantir o melhor preço!</a
         >
+        <p class="small opacity-75 m-0">* Preços válidos até 13/11/2022</p>
       </div>
     </div>
+
     <!-- <div class="col-lg-4">
       <div class="preco-box">
         <p class="produto">Clube da Musculação</p>

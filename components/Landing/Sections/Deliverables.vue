@@ -12,8 +12,17 @@ export default {
 <template>
   <section id="entregavies">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
+      <div class="row gap-5 justify-content-center align-items-center">
+        <div class="col-lg-4 text-center">
+          <nuxt-img
+            src="/img/landing/devices.png"
+            alt="promessa"
+            format="webp"
+            loading="lazy"
+            class="w-100"
+          />
+        </div>
+        <div class="col-lg-7">
           <h2>
             Treino novo no seu celular toda semana, com o suporte que você
             merece!
@@ -49,10 +58,9 @@ export default {
           <!-- <div class="preco text-center mt-4 mb-4">
             <nuxt-img src="/img/landing/preco.png" class="align-center" />
           </div> -->
-          <LandingPartialsPlans :checkoutLink="checkoutLink" />
-          <p class="small opacity-75 m-0">* Preços válidos até 13/11/2022</p>
         </div>
       </div>
+      <LandingPartialsPlans :checkoutLink="checkoutLink" />
     </div>
   </section>
 </template>
