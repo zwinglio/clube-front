@@ -15,6 +15,7 @@ export default {
     script: [
       {
         src: "/js/bootstrap.bundle.min.js",
+        src: "/js/gtm.js",
       },
       {
         // src: '@/node_modules/plyr/dist/plyr.min.js',
@@ -39,15 +40,7 @@ export default {
   buildModules: ["@nuxtjs/google-fonts", "@nuxt/image", '@nuxtjs/pwa'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image", "@nuxtjs/auth-next", "@nuxtjs/gtm"],
-
-  gtm: {
-    enabled: true,
-    id: 'GTM-M9VHPR5',
-    noscript: true,
-    noscriptId: 'gtm-noscript',
-    noscriptURL: 'https://www.googletagmanager.com/ns.html'
-  },
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image", "@nuxtjs/auth-next"],
 
   auth: {
     strategies: {
