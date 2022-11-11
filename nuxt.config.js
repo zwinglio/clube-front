@@ -8,14 +8,23 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
+      { hid: "description", name: "description", content: "12 semanas de treino e acesso direto à Personal, para você usar na sua academia e mudar de uma vez por todas o seu corpo para sua melhor versão!" },
+      { hid: "og:title", property: "og:title", content: "Clube da Musculação 🔥" },
+      { hid: "og:description", property: "og:description", content: "12 semanas de treino e acesso direto à Personal, para você usar na sua academia e mudar de uma vez por todas o seu corpo para sua melhor versão!" },
+      { hid: "og:type", property: "og:type", content: "product" },
+      { name: "format-detection", content: "telephone=yes" },
+
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
       {
         src: "/js/bootstrap.bundle.min.js",
+        type: "text/javascript",
+      },
+      {
         src: "/js/gtm.js",
+        type: "text/javascript",
+
       },
       {
         // src: '@/node_modules/plyr/dist/plyr.min.js',
