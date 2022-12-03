@@ -14,7 +14,7 @@ export default {
     <div class="col-lg-5">
       <div class="preco-box">
         <p class="produto">Clube da Musculação</p>
-        <p class="valor">R$ 9,90</p>
+        <p class="valor">R$ 19,90</p>
         <p class="valor-subtitulo">por mês / ano</p>
         <p>
           Para quem treina em academia e quer uma personal de bolso. 12 semanas
@@ -38,7 +38,7 @@ export default {
     <div class="col-lg-5">
       <div class="preco-box">
         <p class="produto">Clube da Musculação<br />+ Você em Forma</p>
-        <p class="valor">R$ 19,90</p>
+        <p class="valor">R$ 34,90</p>
         <p class="valor-subtitulo">por mês / ano</p>
         <p>
           Para quem treina em academia ou em casa e quer resultados com 30
