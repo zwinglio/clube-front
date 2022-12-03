@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       checkoutLink:
-        "https://pay.hotmart.com/T76214790K?checkoutMode=10&split=12",
+        "https://pay.hotmart.com/T76214790K?off=ruabp9sz&checkoutMode=10&split=12",
     };
   },
 };
