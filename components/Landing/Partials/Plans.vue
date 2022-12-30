@@ -5,6 +5,10 @@ export default {
       type: String,
       default: null,
     },
+    price: {
+      type: Object,
+      default: null,
+    },
   },
 };
 </script>
@@ -14,7 +18,7 @@ export default {
     <div class="col-lg-5">
       <div class="preco-box">
         <p class="produto">Clube da Musculação</p>
-        <p class="valor">R$ 19,90</p>
+        <p class="valor">{{ price.indepedent }}</p>
         <p class="valor-subtitulo">por mês / ano</p>
         <p>
           Para quem treina em academia e quer uma personal de bolso. 12 semanas
@@ -38,7 +42,7 @@ export default {
     <div class="col-lg-5">
       <div class="preco-box">
         <p class="produto">Clube da Musculação<br />+ Você em Forma</p>
-        <p class="valor">R$ 34,90</p>
+        <p class="valor">{{ price.combo }}</p>
         <p class="valor-subtitulo">por mês / ano</p>
         <p>
           Para quem treina em academia ou em casa e quer resultados com 30
@@ -58,7 +62,7 @@ export default {
           class="btn btn-primary w-100 mt-4 mb-4"
           >Garantir o melhor preço!</a
         >
-        <p class="small opacity-75 m-0">* Preços válidos até 13/11/2022</p>
+        <p class="small opacity-75 m-0">* Preços válidos até 05/01/2023</p>
       </div>
     </div>
 

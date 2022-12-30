@@ -5,6 +5,10 @@ export default {
       type: String,
       default: null,
     },
+    price: {
+      type: Object,
+      default: "R$ 19,90",
+    },
   },
 };
 </script>
@@ -60,7 +64,7 @@ export default {
           </div> -->
         </div>
       </div>
-      <LandingPartialsPlans :checkoutLink="checkoutLink" />
+      <LandingPartialsPlans :checkoutLink="checkoutLink" :price="price" />
     </div>
   </section>
 </template>

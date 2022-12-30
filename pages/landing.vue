@@ -6,9 +6,9 @@
     <LandingSectionsProgression />
     <LandingSectionsPersonal :checkoutLink="checkoutLink" />
     <LandingSectionsSocialProof />
-    <LandingSectionsDeliverables :checkoutLink="checkoutLink" />
+    <LandingSectionsDeliverables :checkoutLink="checkoutLink" :price="price" />
     <LandingSectionsWarranty :checkoutLink="checkoutLink" />
-    <LandingSectionsFaq />
+    <LandingSectionsFaq />''
     <LandingSectionsFooter />
   </div>
 </template>
@@ -20,7 +20,11 @@ export default {
   data() {
     return {
       checkoutLink:
-        "https://pay.hotmart.com/T76214790K?off=ruabp9sz&checkoutMode=10&split=12",
+        "https://pay.hotmart.com/T76214790K?off=m4v7p2uk&checkoutMode=10&split=12",
+      price: {
+        indepedent: "R$ 14,92",
+        combo: "R$ 24,92",
+      },
     };
   },
 };
