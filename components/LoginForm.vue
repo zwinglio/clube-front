@@ -47,6 +47,12 @@
               </button>
             </div>
           </form>
+          <NuxtLink
+            to="/reset-password"
+            class="mt-3 d-block text-center opacity-75"
+          >
+            Esqueceu a senha?
+          </NuxtLink>
         </div>
       </div>
     </div>
