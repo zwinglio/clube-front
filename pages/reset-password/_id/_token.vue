@@ -117,9 +117,9 @@ export default {
           password_confirmation: this.passwordMatch,
         })
         .then((response) => {
+          this.success = true;
+          this.loading = false;
           setTimeout(() => {
-            this.success = true;
-            this.loading = false;
             this.$router.push("/login");
           }, 2000);
         })
