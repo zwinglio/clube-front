@@ -47,11 +47,22 @@
           <div class="d-flex align-items-center mt-4">
             <button
               type="submit"
-              class="btn btn-primary"
+              class="btn btn-primary w-75"
               @click.prevent="sendNewPassword()"
             >
               Criar nova senha
             </button>
+            <div
+              v-if="loading"
+              class="spinner-border text-primary ms-3"
+              role="status"
+            >
+              <span class="visually-hidden">Carregando...</span>
+            </div>
+            <div v-if="success" class="ms-2">
+              <span class="small text-primary">Senha alterada!</span>
+              <span class="small">Redirecionando...</span>
+            </div>
           </div>
         </form>
         <hr class="my-4" />
@@ -74,6 +85,8 @@ export default {
       match: true,
       requirements: true,
       tokenExpired: false,
+      success: false,
+      loading: false,
       userId: this.$route.params.id,
       token: this.$route.params.token,
     };
@@ -94,6 +107,8 @@ export default {
         this.match = true;
       }
 
+      this.loading = true;
+
       await this.$axios
         .post("forgot-password/change", {
           userId: this.userId,
@@ -102,10 +117,15 @@ export default {
           password_confirmation: this.passwordMatch,
         })
         .then((response) => {
-          this.$router.push("/weeks");
+          setTimeout(() => {
+            this.success = true;
+            this.loading = false;
+            this.$router.push("/login");
+          }, 2000);
         })
         .catch((error) => {
           if (error.response.status === 401) {
+            this.loading = false;
             this.tokenExpired = true;
           }
           console.log(error);

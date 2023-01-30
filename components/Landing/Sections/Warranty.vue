@@ -36,6 +36,25 @@ export default {
   padding: 75px 0;
 }
 
+.btn:hover,
+.btn:focus {
+  text-transform: uppercase;
+  letter-spacing: 150%;
+  color: #fff;
+}
+
+.btn-primary {
+  filter: drop-shadow(0px 0px 5px #00df7b);
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  padding: 15px;
+  margin-top: 45px;
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+
 h2 {
   font-family: "Inter";
   font-style: italic;
