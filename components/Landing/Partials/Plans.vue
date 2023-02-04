@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: "LandingPlans",
   props: {
     checkoutLink: {
       type: String,
@@ -35,8 +36,7 @@ export default {
           :href="checkoutLink"
           target="_blank"
           class="btn btn-primary w-100 mt-4 mb-4"
-          >Assinar agora o clube!</a
-        >
+        >Assinar agora o clube!</a>
       </div>
     </div>
     <div class="col-lg-5">
@@ -49,7 +49,9 @@ export default {
           minutos por dia. Acesso completo a plataforma com programas de
           exercício e nutrição.
         </p>
-        <p class="m-0 fw-bold">Tudo do Clube, e mais</p>
+        <p class="m-0 fw-bold">
+          Tudo do Clube, e mais
+        </p>
         <ul>
           <li>8 Programas de Treino</li>
           <li>1 Programa de Receitas Funcionais</li>
@@ -60,8 +62,8 @@ export default {
           :href="checkoutLink"
           target="_blank"
           class="btn btn-primary w-100 mt-4 mb-4"
-          >Garantir o melhor preço!</a
-        >
+          >
+          Garantir o melhor preço!</a>
         <p class="small opacity-75 m-0">* Preços válidos até 05/01/2023</p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: "LandingDeliverables",
   props: {
     checkoutLink: {
       type: String,
@@ -7,7 +8,10 @@ export default {
     },
     price: {
       type: Object,
-      default: "R$ 19,90",
+      default: {
+        indepedent: "R$ 19,90",
+        combo: "R$ 29,90",
+      },
     },
   },
 };
