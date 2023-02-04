@@ -25,22 +25,22 @@
           <div class="form-group">
             <label for="password">Nova senha</label>
             <input
-              type="password"
               id="password"
+              v-model="password"
+              type="password"
               name="password"
               class="form-control"
-              v-model="password"
               required
             />
           </div>
           <div class="form-group mt-2">
             <label for="password">Confirme a nova senha</label>
             <input
-              type="password"
               id="password"
+              v-model="passwordMatch"
+              type="password"
               name="password"
               class="form-control"
-              v-model="passwordMatch"
               required
             />
           </div>
@@ -78,7 +78,7 @@
 <script>
 export default {
   layout: "default",
-  data() {
+  data () {
     return {
       password: "",
       passwordMatch: "",
@@ -88,49 +88,47 @@ export default {
       success: false,
       loading: false,
       userId: this.$route.params.id,
-      token: this.$route.params.token,
-    };
+      token: this.$route.params.token
+    }
   },
   methods: {
-    async sendNewPassword() {
+    async sendNewPassword () {
       if (this.password.length < 8) {
-        this.requirements = false;
-        return;
-      } else {
-        this.requirements = true;
+        this.requirements = false
+        return
       }
+      this.requirements = true
 
       if (this.password !== this.passwordMatch) {
-        this.match = false;
-        return;
-      } else {
-        this.match = true;
+        this.match = false
+        return
       }
+      this.match = true
 
-      this.loading = true;
+      this.loading = true
 
       await this.$axios
         .post("forgot-password/change", {
           userId: this.userId,
           token: this.token,
           password: this.password,
-          password_confirmation: this.passwordMatch,
+          password_confirmation: this.passwordMatch
         })
         .then((response) => {
-          this.success = true;
-          this.loading = false;
+          this.success = true
+          this.loading = false
           setTimeout(() => {
-            this.$router.push("/login");
-          }, 2000);
+            this.$router.push("/login")
+          }, 2000)
         })
         .catch((error) => {
           if (error.response.status === 401) {
-            this.loading = false;
-            this.tokenExpired = true;
+            this.loading = false
+            this.tokenExpired = true
           }
-          console.log(error);
-        });
-    },
-  },
-};
+          console.log("erro:", error)
+        })
+    }
+  }
+}
 </script>
