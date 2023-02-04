@@ -12,6 +12,7 @@ module.exports = {
   plugins: ["vue"],
   rules: {
     quotes: ["error", "double"],
-    'vue/html-self-closing': "off"
+    "vue/html-self-closing": "off",
+    "linebreak-style": ["error", "windows"]
   }
 }
