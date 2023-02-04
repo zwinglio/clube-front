@@ -4,10 +4,17 @@ export default {
   props: {
     checkoutLink: {
       type: String,
-      default: null
-    }
-  }
-}
+      default: null,
+    },
+    price: {
+      type: Object,
+      default: {
+        indepedent: "R$ 19,90",
+        combo: "R$ 29,90",
+      },
+    },
+  },
+};
 </script>
 
 <template>
@@ -61,7 +68,7 @@ export default {
           </div> -->
         </div>
       </div>
-      <LandingPartialsPlans :checkout-link="checkoutLink" />
+      <LandingPartialsPlans :checkoutLink="checkoutLink" :price="price" />
     </div>
   </section>
 </template>
