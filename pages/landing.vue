@@ -1,13 +1,13 @@
 <template>
   <div class="landing">
     <LandingSectionsMenu />
-    <LandingSectionsPromise :checkoutLink="checkoutLink" />
-    <LandingSectionsPlausability :checkoutLink="checkoutLink" />
+    <LandingSectionsPromise :checkout-link="checkoutLink" />
+    <LandingSectionsPlausability :checkout-link="checkoutLink" />
     <LandingSectionsProgression />
-    <LandingSectionsPersonal :checkoutLink="checkoutLink" />
+    <LandingSectionsPersonal :checkout-link="checkoutLink" />
     <LandingSectionsSocialProof />
-    <LandingSectionsDeliverables :checkoutLink="checkoutLink" />
-    <LandingSectionsWarranty :checkoutLink="checkoutLink" />
+    <LandingSectionsDeliverables :checkout-link="checkoutLink" />
+    <LandingSectionsWarranty :checkout-link="checkoutLink" />
     <LandingSectionsFaq />
     <LandingSectionsFooter />
   </div>
@@ -17,13 +17,13 @@
 export default {
   layout: "DefaultLayout",
 
-  data() {
+  data () {
     return {
       checkoutLink:
-        "https://pay.hotmart.com/T76214790K?off=ruabp9sz&checkoutMode=10&split=12",
-    };
-  },
-};
+        "https://pay.hotmart.com/T76214790K?off=ruabp9sz&checkoutMode=10&split=12"
+    }
+  }
+}
 </script>
 
 <style>

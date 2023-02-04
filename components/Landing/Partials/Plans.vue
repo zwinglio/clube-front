@@ -1,21 +1,28 @@
 <script>
 export default {
+  name: "LandingPlans",
   props: {
     checkoutLink: {
       type: String,
-      default: null,
-    },
-  },
-};
+      default: null
+    }
+  }
+}
 </script>
 
 <template>
   <div class="row justify-content-center mt-4">
     <div class="col-lg-5">
       <div class="preco-box">
-        <p class="produto">Clube da Musculação</p>
-        <p class="valor">R$ 19,90</p>
-        <p class="valor-subtitulo">por mês / ano</p>
+        <p class="produto">
+          Clube da Musculação
+        </p>
+        <p class="valor">
+          R$ 19,90
+        </p>
+        <p class="valor-subtitulo">
+          por mês / ano
+        </p>
         <p>
           Para quem treina em academia e quer uma personal de bolso. 12 semanas
           de treino nos níveis iniciante, avançado/intermediário e acesso direto
@@ -31,21 +38,28 @@ export default {
           :href="checkoutLink"
           target="_blank"
           class="btn btn-primary w-100 mt-4 mb-4"
-          >Assinar agora o clube!</a
-        >
+        >Assinar agora o clube!</a>
       </div>
     </div>
     <div class="col-lg-5">
       <div class="preco-box">
-        <p class="produto">Clube da Musculação<br />+ Você em Forma</p>
-        <p class="valor">R$ 34,90</p>
-        <p class="valor-subtitulo">por mês / ano</p>
+        <p class="produto">
+          Clube da Musculação<br />+ Você em Forma
+        </p>
+        <p class="valor">
+          R$ 39,90
+        </p>
+        <p class="valor-subtitulo">
+          por mês / ano
+        </p>
         <p>
           Para quem treina em academia ou em casa e quer resultados com 30
           minutos por dia. Acesso completo a plataforma com programas de
           exercício e nutrição.
         </p>
-        <p class="m-0 fw-bold">Tudo do Clube, e mais</p>
+        <p class="m-0 fw-bold">
+          Tudo do Clube, e mais
+        </p>
         <ul>
           <li>8 Programas de Treino</li>
           <li>1 Programa de Receitas Funcionais</li>
@@ -56,9 +70,10 @@ export default {
           :href="checkoutLink"
           target="_blank"
           class="btn btn-primary w-100 mt-4 mb-4"
-          >Garantir o melhor preço!</a
-        >
-        <p class="small opacity-75 m-0">* Preços válidos até 13/11/2022</p>
+        >Garantir o melhor preço!</a>
+        <!-- <p class="small opacity-75 m-0">
+          * Preços válidos até 13/11/2022
+        </p> -->
       </div>
     </div>
 

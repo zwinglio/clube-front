@@ -1,12 +1,13 @@
 <script>
 export default {
+  name: "LandingDeliverables",
   props: {
     checkoutLink: {
       type: String,
-      default: null,
-    },
-  },
-};
+      default: null
+    }
+  }
+}
 </script>
 
 <template>
@@ -60,7 +61,7 @@ export default {
           </div> -->
         </div>
       </div>
-      <LandingPartialsPlans :checkoutLink="checkoutLink" />
+      <LandingPartialsPlans :checkout-link="checkoutLink" />
     </div>
   </section>
 </template>
