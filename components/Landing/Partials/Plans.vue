@@ -4,19 +4,19 @@ export default {
   props: {
     checkoutLink: {
       type: String,
-      default: null,
+      default: null
     },
     price: {
       type: Object,
-      default: null,
-    },
-  },
-};
+      default: null
+    }
+  }
+}
 </script>
 
 <template>
   <div class="row justify-content-center mt-4">
-    <div class="col-lg-5">
+    <!-- <div class="col-lg-5">
       <div class="preco-box">
         <p class="produto">Clube da Musculação</p>
         <p class="valor">{{ price.indepedent }}</p>
@@ -38,17 +38,29 @@ export default {
           class="btn btn-primary w-100 mt-4 mb-4"
         >Assinar agora o clube!</a>
       </div>
-    </div>
+    </div> -->
     <div class="col-lg-5">
       <div class="preco-box">
-        <p class="produto">Clube da Musculação<br />+ Você em Forma</p>
-        <p class="valor">{{ price.combo }}</p>
-        <p class="valor-subtitulo">por mês / ano</p>
+        <p class="produto">
+          Clube da Musculação<br />+ Você em Forma
+        </p>
+        <p class="valor">
+          {{ price.combo }}
+        </p>
+        <p class="valor-subtitulo">
+          por mês / ano
+        </p>
         <p>
           Para quem treina em academia ou em casa e quer resultados com 30
           minutos por dia. Acesso completo a plataforma com programas de
           exercício e nutrição.
         </p>
+        <ul>
+          <li>Clube da Musculação</li>
+          <li>Suporte Direto com Carina</li>
+          <li>Grupo Exclusivo</li>
+          <li>7 Dias de Garantia</li>
+        </ul>
         <p class="m-0 fw-bold">
           Tudo do Clube, e mais
         </p>
@@ -62,9 +74,11 @@ export default {
           :href="checkoutLink"
           target="_blank"
           class="btn btn-primary w-100 mt-4 mb-4"
-          >
+        >
           Garantir o melhor preço!</a>
-        <p class="small opacity-75 m-0">* Preços válidos até 05/01/2023</p>
+        <p class="small opacity-75 m-0">
+          * Preços válidos até 12/03/2023
+        </p>
       </div>
     </div>
 
